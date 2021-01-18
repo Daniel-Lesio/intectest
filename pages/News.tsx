@@ -103,7 +103,7 @@ const PageHeader = styled.div`
 
 
 export const getStaticProps = async () => {
-  const fs = require('fs/promises')
+  const fs = require('fs').promises
   const path = require('path')
   const data = await fs.readFile( path.join(process.cwd(),'/data/posts.json'),'utf-8')
   let news = await JSON.parse(data)

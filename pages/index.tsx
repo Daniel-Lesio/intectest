@@ -47,7 +47,7 @@ interface TestimonialType  {
   author : string,
 }
 export const getStaticProps : GetStaticProps = async (context) => {
- const fs = require('fs/promises')
+ const fs = require('fs').promises
 const path = require('path')
   const HeroData : HeroObj = {
     line1 : "Your general contractor",

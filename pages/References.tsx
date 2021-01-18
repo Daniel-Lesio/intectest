@@ -81,7 +81,7 @@ const PageHeader = styled.div`
 `
 
 export const getStaticProps : GetStaticProps = async () => {
-    const fs = require('fs/promises')
+    const fs = require('fs').promises
 const path = require('path') 
     const referencesData = await fs.readFile( path.join(process.cwd(),'/data/references.json'),'utf-8')
     let references = await JSON.parse(referencesData)
