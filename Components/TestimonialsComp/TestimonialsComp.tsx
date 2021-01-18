@@ -48,7 +48,6 @@ const TestimonialsComp = ({data}) => {
     return (
         <section id='news'  className='testies' style={{paddingBottom : 190}} >
             <Image
-            
               src='/assets/Home/testimonials.jpg'
               layout='fill'
             />
