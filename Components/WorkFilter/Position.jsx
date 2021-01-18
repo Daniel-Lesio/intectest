@@ -38,7 +38,7 @@ const More = styled.div`
     justify-content : flex-end;
     color : #EB7700;
     font-weight : 400;
-    padding-right : 24px;
+    padding-right : 25px;
     svg{
         margin-left : 8px;
     }
