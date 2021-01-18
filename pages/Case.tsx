@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Header1, Paragraph , Space} from '../styledComponents/styledComponents'
+import {Header1, Paragraph } from '../styledComponents/styledComponents'
 // import aboutImg  from '../assets/about.png'
 // import Case1 from '../assets/cases/Case_Study_1.jpg'
 // import Case2 from '../assets/cases/Case_Study_2.jpg'
@@ -17,9 +17,11 @@ const Case = () => {
             <Grid className="container">
             <Left>
                 <Header1>Çeltikçi</Header1>
-                <Space size={16}/>
+                <div style={{height : 16}}></div>
+               
                 <Paragraph>Solar Energy System of CELTIKCI Solar Power Plant, located in the Village of Celtikci, the Province of Denizli, has a total capacity of 14 MWp with an estimated annual energy production of roughly 23.460.000 kWh, avoiding the emission of over 10 tons of CO2 per year.</Paragraph>
-                <Space size={40}/>
+                <div style={{height : 40}}></div>
+               
                 <Paragraph>
 • Employer: Bereket Enerji <br/>
 • Location: Denizli / Turkey<br/>
@@ -43,7 +45,8 @@ const Case = () => {
                     />
                     </Rounded>
                 </AspectRatio>
-                <Space size={24}/>
+                <div style={{height : 24}}></div>
+               
                 <AspectRatio ratio='256/176' style={{display: 'flex', 'flex-direction': 'column',maxWidth: '256px'}}>
                     {/* <Img src={Case2} alt=""/> */}
                     <Rounded>
@@ -73,19 +76,20 @@ const Case = () => {
             </AspectRatio>
             </div>
             <div className="center" style={{display : 'flex',flexDirection:'column'}}>
-            <Header1 style={{'font-weight': 'bold',
-'font-size': '26px',
-'line-height': '32px','text-transform':'uppercase'}}>Tellus eget</Header1>
-<Space size={16}/>
+            <Header1 style={{ fontWeight: 'bold',fontSize: '26px',lineHeight: '32px',textTransform:'uppercase'}}>Tellus eget</Header1>
+<div style={{height : 16}}></div>
+               
             <Paragraph style={{color:'#EB7700'}}>12 November  2020</Paragraph>
-<Space size={16}/>
+            <div style={{height : 16}}></div>
+               
             <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu tincidunt habitant convallis nisi tristique consectetur potenti. Nascetur vitae nunc nisi, rutrum. Et sagittis, senectus lorem nunc vitae tempor ultricies volutpat pharetra. Ultrices in volutpat vestibulum quam et sit molestie. Dolor, in mauris felis laoreet penatibus amet volutpat. Tellus eget vulputate habitant id viverra. Hendrerit mauris blandit id leo quis vulputate facilisi. Risus dapibus dui donec.</Paragraph>
             </div>
             <div className="right" style={{color : '#008440',display : 'flex',flexDirection:'column',alignItems : 'center'}}>
                 <Circle>
                     <Image src='/assets/ico/cases/doc-healthy.svg' width={24} height={24} alt=""/>
                 </Circle>
-                <Space size={8}/>
+                <div style={{height : 8}}></div>
+               
                 <p style={{textAlign : 'center',fontSize : 7,fontWeight :800}}>Documentation,<br/> Health & Safty </p>
                 
             </div>
@@ -107,12 +111,13 @@ const Case = () => {
             </AspectRatio>
             </div>
             <div className="center" style={{display : 'flex',flexDirection:'column'}}>
-            <Header1 style={{'font-weight': 'bold',
-'font-size': '26px',
-'line-height': '32px','text-transform':'uppercase'}}>Tellus eget</Header1>
-<Space size={16}/>
+            <Header1 style={{fontWeight: 'bold',fontSize: '26px',lineHeight: '32px',textTransform:'uppercase'}}>Tellus eget</Header1>
+
+<div style={{height : 16}}></div>
+               
             <Paragraph style={{color:'#EB7700'}}>12 November  2020</Paragraph>
-<Space size={16}/>
+            <div style={{height : 16}}></div>
+               
             <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu tincidunt habitant convallis nisi tristique consectetur potenti. Nascetur vitae nunc nisi, rutrum. Et sagittis, senectus lorem nunc vitae tempor ultricies volutpat pharetra. Ultrices in volutpat vestibulum quam et sit molestie. Dolor, in mauris felis laoreet penatibus amet volutpat. Tellus eget vulputate habitant id viverra. Hendrerit mauris blandit id leo quis vulputate facilisi. Risus dapibus dui donec.</Paragraph>
             </div>
             <div className="right" style={{color : '#008440',display : 'flex',flexDirection:'column',alignItems : 'center'}}>
@@ -120,7 +125,8 @@ const Case = () => {
                 <Image src='/assets/ico/cases/doc-healthy.svg' width={24} height={24} alt=""/>
 
                 </Circle>
-                <Space size={8}/>
+                <div style={{height : 8}}></div>
+               
                 <p style={{textAlign : 'center',fontSize : 7,fontWeight :800}}>Documentation,<br/> Health & Safty </p>
                 
             </div>

@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
 import Position from "./Position";
-import {Space} from '../../styledComponents/styledComponents'
 import {animate, AnimatePresence, motion} from 'framer-motion'
 const WorkFilter = ({positions}) => {
     const [pos,setPos] = useState('')
@@ -102,7 +101,7 @@ const WorkFilter = ({positions}) => {
                 </AnimatePresence>
                 </InputComp>
             </FormGroup>
-            <Space size={60}/>
+            <div style={{height: 60}}></div>
             <Positions>
                 {positions.filter(
                     name => name.position.toLowerCase().includes(pos) && name.city.toLowerCase().includes(loc)

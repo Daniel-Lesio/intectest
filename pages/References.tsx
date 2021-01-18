@@ -5,7 +5,7 @@ import path from 'path'
 import React,{useEffect,useState} from 'react';
 import styled from 'styled-components';
 // import aboutImg  from '../assets/about.png'
-import { Header1, Paragraph,Space } from '../styledComponents/styledComponents';
+import { Header1, Paragraph } from '../styledComponents/styledComponents';
 import Reference from '../Components/Reference/Reference'
 // import {referencesList}  from '../data'
 import Button from '../Layout/Button'
@@ -30,13 +30,15 @@ const References = ({references}) => {
                 layout='fill'
                 />
                 <div className="cont">
-                    <Space size={56} />
+                    <div style={{height : 56}}></div>
+            
                     <Header1 style={{textAlign : 'center',textTransform:'uppercase'}}>References</Header1>
-                    <Space size={24} />
+                    <div style={{height : 24}}></div>
                     <Paragraph style={{textAlign:'center'}}>
                     INTEC Energy Solutions provides comprehensive, turn-key renewable energy services at best-in-class standards for investors and developers. Our commitment to “Do It Right the First Time” is upheld by our solution approach that incorporates exhaustive preliminary analysis, precautions, and on-site service. This philosophy increases our positive impact and empowers our achievements and customer satisfaction. Guided by enhanced energy efficiency, we help customers benefit from solar and wind power systems in all aspects of life while keeping environmental sustainability and renewable resources a top priority.
                     </Paragraph>
-                    <Space size={24}></Space>
+                    <div style={{height : 24}}></div>
+            
                     <Paragraph style={{fontWeight:900,textAlign:'center'}}>
                     Please see our selected Projects:
                     </Paragraph>
@@ -50,7 +52,8 @@ const References = ({references}) => {
                     ))
                 }
             </div>
-            <Space size={32}/>
+            <div style={{height : '32px'}}></div>
+            
                 <div style={{display:'flex',justifyContent:'center',alignItems: 'center',paddingBottom : '96px' ,paddingTop : '32px'}}>
                 <Button value="MORE" color="green" arrow/>
                 </div>

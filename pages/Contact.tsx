@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Button from "../Layout/Button";
 import Layout from '../Layout/Layout';
 const aboutImg  = '../assets/about.png'
-import {Space} from '../styledComponents/styledComponents'
 const map = '../assets/map.jpg'
 import { activeLink } from '../atoms/atoms'
 import { useSetRecoilState } from 'recoil'
@@ -20,11 +19,12 @@ const Contact = () => {
             <PageHeader style={{background : `url(${aboutImg})`}}>
                 <h1>Contact</h1>
             </PageHeader>
-            <Space size={112}/>
+            
+            <div style={{height : 112}}></div>
             <FormSection className='container'>
                 <Adress>
                     <p style={{color:'#008440',fontSize : 16,lineHeight :'24px'}}>Address</p>
-                    <Space size={8}/>
+            <div style={{height : 9}}></div>
                     <p>Aleja 29 Listopada 20 <br/>
                         31-401 Kraków<br/>
                         +48 533 315 569<br/>
@@ -36,24 +36,26 @@ const Contact = () => {
                         <input type="text" name="name" id="name" placeholder="NAME"/>
                         <input type="text" name="surname" id="surname" placeholder="SURNAME"/>
                     </Grid2>
-                    <Space size={32}/>
+                    <div style={{height : '32px'}}></div>
                     <input type="text" name="email" id="email" placeholder="ADRESS EMAIL"/>
-                    <Space size={32}/>
+                    <div style={{height : '32px'}}></div>
                     <Grid2>
                         <input type="text" name="country" id="country" placeholder="COUNTRY"/>
                         <input type="text" name="mobile" id="mobile" placeholder="TELEPHONE NUMBER"/>
                     </Grid2>
-                    <Space size={32}/>
-                    <textarea placeholder='SEND MESSAGE' name="message" id="message" cols="30" rows="5"></textarea>
-                    <Space size={32}/>
+                    <div style={{height : '32px'}}></div>
+                    <textarea placeholder='SEND MESSAGE' name="message" id="message" cols={30} rows={5}></textarea>
+                    <div style={{height : '32px'}}></div>
                     <div style={{ display : 'flex',justifyContent:  'center', alignItems : 'center' }}>
                     <Button value='SEND' arrow /> 
                     </div>
-                    <Space size={24}/>
+                    <div style={{height : '24px'}}></div>
+                    
                     <p style={{marginLeft:'auto',marginRight:'auto',lineHeight :'24px',fontSize: '16px'}}>by submitting this form you agree to our <a style={{color: '#EB7700' ,textDecoration:'underline'}} href="/">privacy policy</a></p>      
                 </ContactForm>
             </FormSection>
-    <Space size={104}/>
+    <div style={{height : '104px'}}></div>
+                    
     <Offices className='container'>
         <Office>
             <p style={{color:'#008440'}}>GERMANY</p>
@@ -64,7 +66,8 @@ const Contact = () => {
         <a  style={{color:'#EB7700',textDecoration : 'underline'}} href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
 
             </p>
-            <Space size={8}/>
+            <div style={{height : '8px'}}></div>
+            
         </Office>
         <Office>
             <p style={{color:'#008440'}}>GERMANY</p>
@@ -75,7 +78,8 @@ const Contact = () => {
         <a  style={{color:'#EB7700',textDecoration : 'underline'}} href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
 
             </div>
-            <Space size={8}/>
+            <div style={{height : '8px'}}></div>
+
         </Office>
         <Office>
             <p style={{color:'#008440'}}>GERMANY</p>
@@ -86,7 +90,8 @@ const Contact = () => {
         <a  style={{color:'#EB7700',textDecoration : 'underline'}} href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
 
             </p>
-            <Space size={8}/>
+            <div style={{height : '8px'}}></div>
+                    
         </Office>
         <Office>
             <p style={{color:'#008440'}}>GERMANY</p>
@@ -97,8 +102,8 @@ const Contact = () => {
         <a  style={{color:'#EB7700',textDecoration : 'underline'}} href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
 
             </p>
-            <Space size={8}/>
-        </Office>
+            <div style={{height : '8px'}}></div>
+            </Office>
         <Office>
             <p style={{color:'#008440'}}>GERMANY</p>
             <p style={{fontSize : '24px',lineHeight :'36px'}}>
@@ -108,7 +113,8 @@ const Contact = () => {
         <a  style={{color:'#EB7700',textDecoration : 'underline'}} href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
 
             </p>
-            <Space size={8}/>
+            <div style={{height : '8px'}}></div>
+            
         </Office>
     </Offices>        
 

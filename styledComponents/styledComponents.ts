@@ -45,9 +45,7 @@ const Header2 = styled.h2`
     text-align: left;
 
 `
-const Space = styled.div`
-    height : ${props=> props.size ? props.size : 0}px;
-`
 
 
-export {  ContainerComp, Paragraph, Header1, Header2,Space  }
+
+export {  ContainerComp, Paragraph, Header1, Header2  }

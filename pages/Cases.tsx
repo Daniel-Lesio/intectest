@@ -63,9 +63,10 @@ const Cases = () => {
                 />
             <Cont className="cont">
         <Header1 style={{textAlign : 'center'}}>CASE STUDY</Header1>
-                <Space size={16}/>
+                <div style={{height : '16px'}}></div>
                 <Paragraph style={{textAlign:'center'}}>INTEC delivers projects on-time and according to quality standards, providing professional and sustainable energy solutions without compromise. Our proven track record of reliable projects and achievements spurs our growth as a trusted industry partners. Innovative technology and data insights are integrated in all high-quality solutions we develop and implement.</Paragraph>
-                <Space size={16}/>
+                <div style={{height : '16px'}}></div>
+                
                 <Paragraph style={{textAlign:'center',fontWeight: 500}}>Please see selected case study of our projects:</Paragraph>
         </Cont>
         

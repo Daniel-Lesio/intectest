@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react';
 import styled from 'styled-components';
 const HeaderImg = '/assets/career.jpg'
-import {Header1,Space,Paragraph} from '../styledComponents/styledComponents'
+import {Header1,Paragraph} from '../styledComponents/styledComponents'
 import WorkFilter from "../Components/WorkFilter/WorkFilter";
 import { GetStaticProps } from 'next'
 import fs from 'fs/promises'
@@ -23,7 +23,9 @@ const Career = ({positions}) => {
             <PageHeader>
                 <div className="container">
                 <h1 style={{textAlign : 'center'}}>CAREER</h1>
-                <Space size={24}/>
+                
+                <div style={{height : 24}}></div>
+               
                 <Paragraph style={{marginBottom:'16px', textAlign:'center',maxWidth:'700px',marginLeft:'auto',marginRight:'auto'}}>INTEC was founded on the dream of a world full of renewable energy. Now, we design environmentally-friendly energy solutions that excel in performance and sustainability while also providing top profits and output for our shareholders. As we grow in size and industry influence, we recognizes the critical value of teamwork, and priorities employee training and development in all departments.</Paragraph>
                     <ButtonWhite>
                         <p style={{marginRight : 24}}>CHECK VACANCIES</p>

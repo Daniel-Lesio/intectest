@@ -1,6 +1,6 @@
 import React , {useEffect} from 'react';
 import styled from 'styled-components'
-import { Header2,Paragraph ,  Space } from '../../styledComponents/styledComponents'
+import { Header2,Paragraph  } from '../../styledComponents/styledComponents'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 const NewsArticle = ({article}) => {
@@ -14,9 +14,10 @@ const NewsArticle = ({article}) => {
                 <Image src={ article.url }/>
             </Figure>
             <CardBody>
-            <Space size={20} />
+            
+            <div style={{height : 20}}></div>
             <Header2>{article.title}</Header2>
-            <Space size={8} />
+            <div style={{height : 8}}></div>
             <Paragraph >{article.excerpt}</Paragraph>
             </CardBody>
             <CardFooter>

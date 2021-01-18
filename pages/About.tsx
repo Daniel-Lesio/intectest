@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import { Header1, Paragraph, Space  } from "../styledComponents/styledComponents";
+import { Header1, Paragraph  } from "../styledComponents/styledComponents";
 import {motion} from 'framer-motion'
 import NumbersGrey from '../Components/NumbersGrey/NumbersGrey'
 import Image from 'next/image'
@@ -21,11 +21,13 @@ const About = () => {
                     layout='fill'
             />
                 <div className="container" style={{position : 'relative'}}>
-                <Space size={24}/>
+                    <div style={{height : 24}}></div>
+                
                 <Header1 style={{textAlign : 'center'}}>WHO WE ARE</Header1>
-                <Space size={24}/>
+                    <div style={{height : 24}}></div>
                 <Paragraph style={{marginBottom:'16px', textAlign:'center',maxWidth:'700px',marginLeft:'auto',marginRight:'auto'}}>Since 2016, Intec Energy Solutions has been a leading provider of services related to the construction of farms from renewable energy sources. We design high-quality solar farms for international investors. Our employees have many years of experience in German companies that are pioneers in the photovoltaic market in Europe. That is why we follow the engineering principles developed by the largest companies in the industry in all our projects. As a result, our farms are modern and environmentally friendly with an energy-saving approach.</Paragraph>
-                <Space size={48}/>
+               
+                <div style={{height : 24}}></div>
                 <AboutImage>
                 <Image
                     src='/assets/about/foto_about_us@2x.jpg'
@@ -72,15 +74,19 @@ const About = () => {
                     <Header1>
                     WHAT WE <br/> OFFER?                        
                     </Header1>
-                    <Space size={16}/>
+                    <div style={{height : 16}}></div>
+               
+                    
                     <Paragraph>
                     INTEC provides energy solutions to international investors with its power-plant installation projects, design, construction and production phases. 
                     </Paragraph>
-                    <Space size={16}/>
+                    <div style={{height : 16}}></div>
+               
                     <Paragraph>
                     We can be your General Contractor, we can make project development or operations & maintenance. We can even do whole EPC – this is your call!
                     </Paragraph>
-                    <Space size={32}/>
+                    <div style={{height : 32}}></div>
+               
                     <ButtonWhite>
                         <p style={{marginRight : 24}}>MORE</p>
                         <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path className='path' fillRule="evenodd" clipRule="evenodd" d="M10.3795 0.477212L13.8407 3.93403C14.0531 4.14615 14.0531 4.49008 13.8407 4.70221L10.3794 8.15902C10.1671 8.37115 9.82268 8.37115 9.61028 8.15902C9.39788 7.94689 9.39788 7.60297 9.61028 7.39084L12.1431 4.8613L0.543882 4.8613C0.243504 4.8613 -3.62481e-07 4.61811 -3.37193e-07 4.31812V4.31812C-3.11904e-07 4.01812 0.243505 3.77493 0.543883 3.77493L12.1431 3.77493L9.61028 1.24539C9.39789 1.03327 9.39789 0.689339 9.61028 0.477212C9.82268 0.265084 10.1671 0.265084 10.3795 0.477212Z" fill="white"/></svg>

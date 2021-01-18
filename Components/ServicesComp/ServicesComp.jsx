@@ -5,7 +5,7 @@ import {motion} from 'framer-motion';
 import Image from 'next/image'
 import Arrow from './Arrow'
 import Button from '../../Layout/Button'
-import { Header1, Space } from '../../styledComponents/styledComponents'
+import { Header1 } from '../../styledComponents/styledComponents'
 import { useInView } from 'react-intersection-observer'
 const ServicesComp = () => {
   const { ref, inView} = useInView();
@@ -169,11 +169,13 @@ const ServicesComp = () => {
        </ServiceLeft>
         <div className="service-right">
           <Header1>SERVICES</Header1>
-          <Space size={24}/>
+          <div style={{height : 24}}></div>
+            
 
           <p style={{fontSize : '16px' ,lineHeight : '24px',fontWeight :400}}>INTEC provides energy solutions to international investors with its power-plant installation projects, design, construction and production phases. 
             We can be your General Contractor, we can make project development or operations & maintenance. We can even do whole EPC – this is your call!</p>
-            <Space size={24}/>
+            <div style={{height : 24}}></div>
+            
               <Button value='MORE' arrow />               
           </div>
       </div>  
