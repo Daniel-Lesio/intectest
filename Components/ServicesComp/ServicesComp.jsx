@@ -137,9 +137,9 @@ const ServicesComp = () => {
                         y :  inView ? -100 : 0,
                       }}
                       >EPC 
-                      Engineering,
+                      <p style={{fontWeight : 400 , fontSize : 12,lineHeight : '16px'}}>Engineering,
                       Procurement
-                      & Construction</CircleInfo>
+                      & Construction</p></CircleInfo>
                     </Circle1>
                     {/* prawe gorne 4 */}
                     <Circle1

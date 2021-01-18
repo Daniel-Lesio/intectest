@@ -203,6 +203,11 @@ const  InfoLink = styled.span`
     justify-content : space-between;
     margin-left : 45px;
     font-size : 12px;
+    &:hover{
+        color: orange;
+        text-decoration : underline ;
+
+    }
 `
 const InfoLinks = styled.span`
     display : flex;
