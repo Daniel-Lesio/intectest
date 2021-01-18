@@ -46,9 +46,9 @@ const TestimonialsComp = ({data}) => {
         setposx(x)
     }  
     return (
-        <section id='news'  className='testies' style={{paddingBottom : 190,background : 'green'}} >
+        <section id='news'  className='testies' style={{paddingBottom : 190,background : '#CCE6D9'}} >
             <Image
-              src='/assets/Home/testimonials.jpg'
+              src='/assets/home/testimonials.jpg'
               layout='fill'
             />
             <div className="container"  >
