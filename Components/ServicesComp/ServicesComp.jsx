@@ -71,7 +71,7 @@ const ServicesComp = () => {
           }} 
           >
           
-          <motion.img  src='/assets/active/ico/epm.svg' alt=""/>
+          <motion.img  src='/assets/active/ico/operation.svg' alt=""/>
           <svg    width="43" height="38" viewBox="0 0 43 38" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path   opacity="0.2" d="M8.39031 35.7576C12.7383 34.6383 16.7726 32.6097 20.4661 29.6989C21.6439 28.7657 22.827 27.7293 23.9367 26.6196C29.4583 21.0981 32.7622 14.7122 33.8459 7.51365C33.9714 6.55651 34.0969 5.59937 34.1464 4.62038C34.1542 4.4658 34.162 4.31122 34.1699 4.15664C34.2439 3.20211 34.2393 2.27725 34.2102 1.32793M34.2102 1.32793L41.0833 8.2011M34.2102 1.32793L33.9411 1.05887L25.9566 9.04343M1.78555 36.7856C2.60997 36.7438 3.40993 36.6777 4.21249 36.56L1.78555 36.7856Z" stroke="#008446" strokeWidth="2" strokeMiterlimit="3" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -106,7 +106,7 @@ const ServicesComp = () => {
                     
                     >
                       {/* Left Down */}
-                      <img src='/assets/active/ico/general.svg' alt=""/>
+                      <img src='/assets/active/ico/epm.svg' alt=""/>
                       <CircleInfo
                       animate={{
                         y : inView ? 100 : 0,
@@ -209,6 +209,7 @@ const Circle1 = styled(motion.div)`
 &:hover{
   color : #008440;
 }
+text-transform:  uppercase;
   font-weight : 900!important;
   display : flex;
   justify-content :center;
