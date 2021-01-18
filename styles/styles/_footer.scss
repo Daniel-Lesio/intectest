@@ -1,0 +1,31 @@
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $grey;
+    padding-bottom: 108px;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction:  column;
+        @media (min-width : 768px) {
+            flex-direction:  row;
+        }
+        .footer-left{
+            display: flex;
+            align-items: center;
+            img{
+                margin-right: 56px;
+            }
+        }
+        .footer-right{
+               display: flex; 
+               align-items: center;
+               p{
+                   margin-left: 20px;
+                   margin-right: 20px;
+               }
+        }
+    }
+}

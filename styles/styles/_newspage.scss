@@ -1,0 +1,13 @@
+.newspage-header{
+    // background: url('../assets/home/orange-number@3x.svg')center no-repeat;
+    min-height: 459px;
+    background-size: cover;
+    margin-top : 150px;
+    padding-top: 56px;
+    color: white;
+    position: relative;
+    width:  100%;
+    img{
+        z-index: -1;
+    }
+}

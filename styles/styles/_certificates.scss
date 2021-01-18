@@ -1,0 +1,22 @@
+#certificate{
+    padding-top: 72px;
+    padding-bottom: 105px;
+    h1{
+        margin-bottom: 38px;
+    }
+    .container{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        @media (max-width: 640px) {
+            flex-direction: column  ;
+            img{
+                margin-top: 24px;
+            }
+        }
+        img{
+            width:  80px;
+        }
+    }
+}

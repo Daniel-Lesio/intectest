@@ -1,0 +1,63 @@
+.bg-grey{
+    margin-top:  84px!important;
+    margin-bottom:  84px!important;
+    // background: url('../assets/about/expirience-number_green.svg')no-repeat center!important;
+    color :black;
+
+}
+.bg-orange{
+    // background: url('/assets/orange-numbers.svg')no-repeat center!important;
+    color : white;
+
+}
+#numbers{
+    img{
+        z-index: -1;
+    }
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    
+    border-radius: 40px 40px 40px 0px;
+    min-height: 220px;
+    // transform: translateY(-110px);
+    margin-top: -110px;
+    padding-top: 32px;
+    background-size: cover;
+    
+    h1{
+        text-align: center;
+        padding-bottom: 32px;
+    }
+    .numbers-grid{
+        display: flex;
+
+        justify-content: space-evenly;
+        .numbers{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            width: 33%;
+            h2{
+                margin-bottom: 16px;
+                margin-bottom: 16px;
+         line-height:  36px;
+            }
+        }
+        .numbers-left{
+            h2{
+                border-right: solid #fff 2px;
+            }
+        }
+        .numbers-right{
+            h2{
+
+                border-left: solid #fff 2px;
+            }
+        }
+    }
+}
+.number{
+    font-weight:  900;
+    font-size:  36px;
+}

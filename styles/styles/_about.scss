@@ -1,0 +1,77 @@
+#about{
+    background-size: cover;
+    padding-bottom: 128px;
+    padding-top: 128px;
+    position: relative;
+    background:   white;
+    .about-icon{
+        position: absolute;
+        right: 100px;
+        bottom: 100px;
+        opacity: 0.3;
+    }
+    .about{
+        padding-left: 16px;
+        padding-right: 16px;
+        display: block;        
+        @media (min-width : 1024px) {
+            display: grid;   
+            grid-template-columns: 1fr 300px ;
+        }
+        gap : 48px;
+        .about-left{
+            width:  100%;
+            max-width: 640px;
+                img{
+                    border-radius: 80px 80px 80px 0px ;
+                }
+        }
+        .about-right{
+            color: white;
+            h1{
+                @media (max-width : 1024px) {
+                    margin-top: 24px;
+                }
+                text-align: left;
+                margin-bottom: 16px;
+            }
+            .btn-about{
+                margin-top: 56px;
+                width: 148px;
+                height: 48px;
+                border: solid 2px white;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all ease-in-out .3s;
+                &:hover{
+                    background: white;
+                    color:  $green;
+                    svg path{
+                        fill : $green;
+                    }
+                }   
+                p{
+                    margin-right: 8px;
+                }
+                svg{
+                    margin-left: 8px;
+                    path{
+                        fill : white
+                    }
+                }
+            }
+            p{
+                //styleName: body;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                letter-spacing: 0px;
+                text-align: left;
+
+            }
+        }
+    }
+}

@@ -1,0 +1,106 @@
+#services{
+    
+    // position: relative;
+    min-height: 100vh;
+    display: flex;    
+    align-items: stretch;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .thunder{
+        position: absolute;
+        right: 90px;
+        bottom: 60px;
+    }
+    .services{
+
+        padding-left: 16px;
+        padding-right: 16px;
+        display: block;        
+        @media (min-width : 1024px) {
+            display: grid;   
+            grid-template-columns: 2fr 1fr;
+        }
+        gap : 48px;
+        .services-left{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            position: relative;
+            
+
+            .img1{
+                transition:  all ease-in-out .3s;
+            }
+            .img2{
+                 circle{
+                    &:hover{
+                        transform: scale(1.3);
+                    }
+                }
+                transition:  all ease-in-out .3s;
+            }
+            img {
+                max-width: 100%;
+                
+                object-fit:  cover;
+            }
+            
+            
+        }
+        .service-right{
+            height: 100%;
+            
+            
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            justify-content: center;
+            padding-left: 100px;
+            h1{
+                text-align: left;
+            }
+
+        }
+    }
+    
+}
+.btn-serv{
+    align-self: flex-start;
+    margin-top: 32px;
+    width: 148px;
+    height: 48px;
+    border: solid 2px $green;
+    background: $green;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        background: white;
+        p{
+            color:  $green;
+
+        }
+        svg path{
+            fill: $green;
+        }
+    }
+    p{
+        margin-right: 8px;
+        color: white;
+    }
+    svg{
+        margin-left: 8px;
+        path{
+            fill : white
+        }
+    }
+}
+
+circle{
+    transition: all ease-in-out .3s;
+    &:hover{
+        transform: scale(1.4);
+    }
+}

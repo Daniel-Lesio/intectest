@@ -1,0 +1,29 @@
+#hero{
+    margin-top: 10px;
+    height: calc(100vh - 10px);
+    width: 100%;
+    
+    // background-image : url('../assets/_banner.jpg');
+    // background-image : url('../assets/_banner@2x.jpg');
+ 
+    // background-position: center;
+    // background-repeat: no-repeat!important;
+    // background-size: cover!important;
+     display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    color: white;
+    img{z-index: -1;}
+    h1{
+        z-index : -1;
+        text-align: left;
+        transform: translateY(-158px);
+        line-height: 48px;
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 48px;
+        letter-spacing: 0px;
+        text-align: left;
+
+    }
+}
