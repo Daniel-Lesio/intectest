@@ -1,6 +1,4 @@
 import { GetStaticProps } from 'next'
-import fs from 'fs/promises'
-import path from 'path'
 import { useEffect } from 'react'
 // import Head from 'next/head'
 import Layout from '../Layout/Layout'
@@ -49,6 +47,8 @@ interface TestimonialType  {
   author : string,
 }
 export const getStaticProps : GetStaticProps = async (context) => {
+ const fs = require('fs/promises')
+const path = require('path')
   const HeroData : HeroObj = {
     line1 : "Your general contractor",
     line2 : 'of PV solar farm',

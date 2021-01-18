@@ -4,8 +4,7 @@ const HeaderImg = '/assets/career.jpg'
 import {Header1,Paragraph} from '../styledComponents/styledComponents'
 import WorkFilter from "../Components/WorkFilter/WorkFilter";
 import { GetStaticProps } from 'next'
-import fs from 'fs/promises'
-import path from 'path'
+
 import Layout from '../Layout/Layout';
 import { activeLink } from '../atoms/atoms'
 import { useSetRecoilState } from 'recoil'
@@ -156,7 +155,8 @@ margin-bottom : 88px;
 `;
 
 export const getStaticProps : GetStaticProps = async () => {
-    
+    const fs = require('fs/promises')
+const path = require('path') 
     const positionsData = await fs.readFile( path.join(process.cwd(),'/data/positions.json'),'utf-8')
     let positions = await JSON.parse(positionsData)
     return {
