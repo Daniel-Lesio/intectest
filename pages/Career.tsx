@@ -155,9 +155,9 @@ margin-bottom : 88px;
 `;
 
 export const getStaticProps : GetStaticProps = async () => {
-    const fs = require('fs').promises
+    const fs = require('fs')
 const path = require('path') 
-    const positionsData = await fs.readFile( path.join(process.cwd(),'/data/positions.json'),'utf-8')
+    const positionsData = await fs.readFileSync( path.join(process.cwd(),'/data/positions.json'),'utf-8')
     let positions = await JSON.parse(positionsData)
     return {
       props: {

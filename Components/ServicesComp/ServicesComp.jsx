@@ -223,9 +223,9 @@ const CircleInfo = styled(motion.div)`
     position : absolute;
     transition :all ease-in-out .3s;
     text-align : center;
-    font-size: 12px;
-    font-style: normal;
-    line-height: 16px;
+    font-size: 16px;
+    line-height:  20px;
+    font-weight: 900;
     letter-spacing: 0px;
     text-align: center;
 `
