@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import styled from 'styled-components';
-import { Header1, Paragraph, Space } from '../styledComponents/styledComponents';
+import { Header1, Paragraph } from '../styledComponents/styledComponents';
 const Case1 = '/assets/cases/Case_Study_1.jpg';
 const Case2 = '/assets/cases/Case_Study_2.jpg';
 const Case3 = '/assets/cases/Case_Study_3.jpg';
