@@ -172,6 +172,7 @@ const AboutIcons = styled.div`
 `
 const AboutIcon = styled.div`
     position    :relative ;
+    
     margin-left : auto;
     margin-right : auto;
     width : 294px;
@@ -184,11 +185,11 @@ const AboutIcon = styled.div`
     }
     p{
         visibility: hidden;
-        
+        top: 0px;
         position: absolute;
         background: #CCE6D9;
         width: 100%;
-        min-height: 100%;
+        height: 110%;
         opacity:  0.3;
         display: flex;
         justify-content: center;
@@ -212,8 +213,7 @@ const AboutIcon = styled.div`
     }
     p{
         line-height : 24px;
-        margin-top : 24px;
-
+      
     }
 `
 
@@ -229,7 +229,6 @@ const Circle = styled.div`
 `
 const AboutIconContent = styled.p`
     position: absolute;
-    margin-top : 16px;
     width : 100%auto;
     padding :  24px 32px;
     background : #ddd;

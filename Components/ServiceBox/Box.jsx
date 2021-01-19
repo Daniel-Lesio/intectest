@@ -43,7 +43,7 @@ const Box = ({order,box}) => {
                             }}
                             initial={{x:0}}
                             >
-                                    <p>ASK US</p>
+                                    <div>ASK US</div>
                             </InnerCircle>
                         
                         </Link>
