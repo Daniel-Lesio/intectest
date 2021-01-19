@@ -3,6 +3,7 @@
 function Mapa(props) {
   return (
     <svg
+    style={{display:'none!important'}}
       width={1440}
       height={840}
       viewBox="0 0 1440 840"
