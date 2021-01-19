@@ -43,7 +43,7 @@ const Box = ({order,box}) => {
                             }}
                             initial={{x:0}}
                             >
-                                    <p>ASk ME</p>
+                                    <p>ASK US</p>
                             </InnerCircle>
                         
                         </Link>
@@ -118,6 +118,7 @@ justify-content: center;
 align-items: center;
 color: #fff;
 cursor: pointer;
+font-size: 14px;
 `;
 const circleVariants = {
     hidden : {x : 1000},
