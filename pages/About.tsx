@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import { Header1, Paragraph  } from "../styledComponents/styledComponents";
+import Mapa from '../Components/Mapa/Mapa'
 import {motion} from 'framer-motion'
 import NumbersGrey from '../Components/NumbersGrey/NumbersGrey'
 import Image from 'next/image'
@@ -10,7 +11,7 @@ import { useSetRecoilState } from 'recoil'
 const About = () => {
     const setActiveLink =useSetRecoilState(activeLink)
     useEffect(() => {
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
         setActiveLink("About")    
     },[] );
     return (
@@ -37,7 +38,7 @@ const About = () => {
                 
                 </div>
             </PageHeader>
-            <div className="container" style={{paddingTop : '256px'}}>
+            <div className="container" style={{paddingTop : '256px',paddingBottom : '256px'}}>
                     <Header1 style={{textAlign : 'center',marginTop:'96px',marginBottom : '56px'}}>OUR VALUES</Header1>
                     <AboutIcons>
                         <AboutIcon>
@@ -64,7 +65,7 @@ const About = () => {
                     </AboutIcons>
                 </div>
                 <div>
-            <SectionAbout >
+            <SectionAbout>
             <Image
           src='/assets/about.png'
           layout='fill'
@@ -100,9 +101,10 @@ const About = () => {
             </SectionAbout>
                 </div>
             <NumbersGrey/>
-            <Mapa>
+            <Mapa/>
+            {/* <MapaComp>
                 <img src='/assets/map.png' alt=""/>    
-            </Mapa>
+            </MapaComp> */}
             <Partners className='container'>
                 <Carousel drag="x">
                 <img src='/assets/about/logo/l_partners01.png' alt=""/>    
@@ -166,13 +168,13 @@ const AboutIcons = styled.div`
     justify-content : space-between;
     flex-wrap : wrap;
     align-items  : center;
-    
+
 `
 const AboutIcon = styled.div`
-margin-left : auto;
-margin-right : auto;
-    width : 100%;
-    max-width : 294px;
+    position    :relative ;
+    margin-left : auto;
+    margin-right : auto;
+    width : 294px;
     display : flex;
     flex-direction  : column;
     align-items :center;
@@ -180,13 +182,24 @@ margin-right : auto;
     @media (max-width : 768px) {
         margin-bottom:60px;
     }
-
+    p{
+        visibility: hidden;
+        
+        position: absolute;
+        background: #CCE6D9;
+        width: 100%;
+        min-height: 100%;
+        opacity:  0.3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     &:hover{
         h2{
             color :  #008440;
         }
         p{
-            transform : translateY(0px);
+        visibility: visible;
         opacity: 1;
         transition : all ease-in-out .3s;
 
@@ -215,6 +228,7 @@ const Circle = styled.div`
    
 `
 const AboutIconContent = styled.p`
+    position: absolute;
     margin-top : 16px;
     width : 100%auto;
     padding :  24px 32px;
@@ -222,16 +236,18 @@ const AboutIconContent = styled.p`
     border-radius : 50px;
     background: rgba(164, 191, 177, 0.14);
     color :  #008440;
-    transform : translateY(100px);
-    opacity: 0;
-    transition : all ease-in-out .3s; 
+    opacity: 1;
+    transition : all ease-in-out .3s;
+    position : relative;
 `
 
 const SectionAbout = styled.section`
+    /* position : absolute; */
+    position : relative;
+    top: 0px;
     min-height : 100vh;
     padding-top : 100px;
     padding-bottom : 100px;
-    position : relative;
     img{
         z-index : -1;
     }
@@ -259,7 +275,7 @@ const Right = styled.figure`
     height : 640px;
     width : 100%;
     border-radius: 80px 80px 80px 0px;
-    position : relative;
+    /* position : relative; */
     overflow : hidden;
     background : #008440;
     opacity : 1;
@@ -281,7 +297,6 @@ const ButtonWhite = styled.div`
     justify-content : space-evenly;
     align-self : flex-start;
     margin-top : 32px;
-    
     margin-bottom : 80px;
         &:hover{
             background : white;
@@ -294,7 +309,7 @@ const ButtonWhite = styled.div`
                }       
     }
 `
-const Mapa = styled.div`
+const MapaComp = styled.div`
 min-height : 840px;
 position : relative;
 margin-bottom : 96px;

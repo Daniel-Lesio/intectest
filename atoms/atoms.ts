@@ -1,14 +1,15 @@
 import {atom} from 'recoil'
+
 const notificationAtom = atom({
-    key: 'notificationAtom', // unique ID (with respect to other atoms/selectors)
+    key: 'notificationAtom', 
     default: {
         text : '',
         active : false
-    }, // default value (aka initial value)
+    }, 
   });
 const activeLink = atom({
-    key: 'activeLink', // unique ID (with respect to other atoms/selectors)
-    default: 'Home'// default value (aka initial value)
+    key: 'activeLink', 
+    default: 'Home'
   });
 
-  export { notificationAtom ,activeLink}
+  export { notificationAtom ,activeLink }
