@@ -204,7 +204,7 @@ const  InfoLink = styled.span`
     margin-left : 45px;
     font-size : 12px;
     &:hover{
-        color: orange;
+        color: #EB7700;
         text-decoration : underline ;
 
     }

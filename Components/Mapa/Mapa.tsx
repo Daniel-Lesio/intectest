@@ -51,7 +51,7 @@ const Mapa : React.FunctionComponent<mapaProps> = ({bg}) => {
     <AnimatePresence>
     {active === 'arabia' && (
         <Info
-        animate={{x : 150  , y : -106 , opacity : 1 }}
+        animate={{x : 200  , y : -16 , opacity : 1 }}
         initial={{ x: 0 , y : 10, opacity : 0 }}
         exit={{ x: 0 , y : 10, opacity : 0 }}
         >
@@ -121,7 +121,7 @@ const Mapa : React.FunctionComponent<mapaProps> = ({bg}) => {
     <AnimatePresence>
     {active === 'jordan' && (
         <Info
-        animate={{x : 150  , y : -56 , opacity : 1 }}
+        animate={{x : 180  , y : -40 , opacity : 1 }}
         initial={{ x: 0 , y : 10, opacity : 0 }}
         exit={{ x: 0 , y : 10, opacity : 0 }}
         >
