@@ -1,423 +1,223 @@
-
-
-function Mapa(props) {
+import React , {useState} from 'react';
+import styled from 'styled-components';
+import {useInView} from 'react-intersection-observer'
+import { motion , AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
+interface mapaProps {
+  bg : boolean
+}
+const Mapa : React.FunctionComponent<mapaProps> = ({bg}) => {
+  const {ref , inView} = useInView()
+  const [ active , setActive ] = useState(null) 
   return (
-    <svg
-    style={{display:'none!important'}}
-      width={1440}
-      height={840}
-      viewBox="0 0 1440 840"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <g clipPath="url(#prefix__clip0)">
+    <MapaSection ref={ref}>
+      {bg && (
+        <Image
+        src='/assets/mapabg/fot_map@2x.jpg'
+        layout='fill'/>
+      )}
+      <Image
+      className='mapasvg'
+      src='/assets/mapabg/mapa.svg'
+      layout='fill'/>
+      <AnimatePresence>
+      {active === 'poland' && (
+        <Info
+        animate={{x : 150  , y : -106 , opacity : 1 }}
+        initial={{ x: 0 , y : 10, opacity : 0 }}
+        exit={{ x: 0 , y : 10, opacity : 0 }}
+        >
+        Aleja 29 Listopada 20 <br/>
+        31-401 Kraków <br/>
+        +48 533 315 569 <br/>
+        <a  href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
+        </Info>
+      )}      
+    </AnimatePresence>
+    <AnimatePresence>
+    {active === 'germany' && (
+        <Info
+        animate={{x : 150  , y : -106 , opacity : 1 }}
+        initial={{ x: 0 , y : 10, opacity : 0 }}
+        exit={{ x: 0 , y : 10, opacity : 0 }}
+        >
+        Germany 29 Listopada 20 <br/>
+        31-401 Kraków <br/>
+        +48 533 315 569 <br/>
+        <a  href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
+        </Info>
+      )}
+    </AnimatePresence>
+    <AnimatePresence>
+    {active === 'arabia' && (
+        <Info
+        animate={{x : 150  , y : -106 , opacity : 1 }}
+        initial={{ x: 0 , y : 10, opacity : 0 }}
+        exit={{ x: 0 , y : 10, opacity : 0 }}
+        >
+        Arabia 29 Listopada 20 <br/>
+        31-401 Kraków <br/>
+        +48 533 315 569 <br/>
+        <a  href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
+        </Info>
+      )}
+    </AnimatePresence>
+    <AnimatePresence>
+    {active === 'czech' && (
+        <Info
+        animate={{x : 150  , y : -86 , opacity : 1 }}
+        initial={{ x: 0 , y : 10, opacity : 0 }}
+        exit={{ x: 0 , y : 10, opacity : 0 }}
+        >
+        Czech 29 Listopada 20 <br/>
+        31-401 Kraków <br/>
+        +48 533 315 569 <br/>
+        <a  href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
+        </Info>
+      )}
+    </AnimatePresence>
+    <AnimatePresence>
+    {active === 'france' && (
+        <Info
+        animate={{x : 150  , y : -76 , opacity : 1 }}
+        initial={{ x: 0 , y : 10, opacity : 0 }}
+        exit={{ x: 0 , y : 10, opacity : 0 }}
+        >
+        France 29 Listopada 20 <br/>
+        31-401 Kraków <br/>
+        +48 533 315 569 <br/>
+        <a  href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
+        </Info>
+      )}
+    </AnimatePresence>
+    <AnimatePresence>
+    {active === 'nederland' && (
+        <Info
+        animate={{x : 150  , y : -76 , opacity : 1 }}
+        initial={{ x: 0 , y : 10, opacity : 0 }}
+        exit={{ x: 0 , y : 10, opacity : 0 }}
+        >
+        Holland 29 Listopada 20 <br/>
+        31-401 Kraków <br/>
+        +48 533 315 569 <br/>
+        <a  href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
+        </Info>
+      )}
+    </AnimatePresence>
+    <AnimatePresence>
+    {active === 'turkey' && (
+        <Info
+        animate={{x : 150  , y : -56 , opacity : 1 }}
+        initial={{ x: 0 , y : 10, opacity : 0 }}
+        exit={{ x: 0 , y : 10, opacity : 0 }}
+        >
+        Turkey 29 Listopada 20 <br/>
+        31-401 Kraków <br/>
+        +48 533 315 569 <br/>
+        <a  href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
+        </Info>
+      )}
+    </AnimatePresence>
+    <AnimatePresence>
+    {active === 'jordan' && (
+        <Info
+        animate={{x : 150  , y : -56 , opacity : 1 }}
+        initial={{ x: 0 , y : 10, opacity : 0 }}
+        exit={{ x: 0 , y : 10, opacity : 0 }}
+        >
+        Jordan 29 Listopada 20 <br/>
+        31-401 Kraków <br/>
+        +48 533 315 569 <br/>
+        <a  href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
+        </Info>
+      )}
+    </AnimatePresence>
         
-        <circle cx={731} cy={335} r={20} fill="#fff" />
-        <g filter="url(#prefix__filter0_d)">
-          <circle cx={731} cy={335} r={16} fill="#D20303" />
-          <mask
-            id="prefix__a"
-            maskUnits="userSpaceOnUse"
-            x={715}
-            y={319}
-            width={32}
-            height={32}
-          >
-            <circle
-              cx={731}
-              cy={335}
-              r={16}
-              transform="rotate(-180 731 335)"
-              fill="#fff"
-            />
-          </mask>
-          <g mask="url(#prefix__a)">
-            <path fill="#fff" d="M747 335h-32.667v-16H747z" />
-          </g>
-        </g>
-        <circle cx={689} cy={318} r={20} fill="#fff" />
-        <g filter="url(#prefix__filter1_d)">
-          <path
-            d="M689 302c-7 0-12.9 4.5-15.1 10.7h30.2c-2.2-6.2-8.1-10.7-15.1-10.7z"
-            fill="#AE1C28"
-          />
-          <path
-            d="M705 318c0-1.9-.3-3.7-.9-5.3h-30.2c-.6 1.6-.9 3.4-.9 5.3s.3 3.7.9 5.3h30.2c.6-1.6.9-3.4.9-5.3z"
-            fill="#fff"
-          />
-          <path
-            d="M673.9 323.3c2.2 6.2 8.1 10.7 15.1 10.7s12.9-4.5 15.1-10.7h-30.2z"
-            fill="#21468B"
-          />
-        </g>
-        <circle cx={727} cy={377} r={20} fill="#fff" />
-        <g clipPath="url(#prefix__clip1)" filter="url(#prefix__filter2_d)">
-          <path
-            d="M743 377h-13.503l-14.96 10.035A15.976 15.976 0 00726.976 393 16.022 16.022 0 00743 377z"
-            fill="#D7141A"
-          />
-          <path
-            d="M714.537 366.965L729.497 377h13.41A16.003 16.003 0 00727 361a16.036 16.036 0 00-6.908 1.57 16.04 16.04 0 00-5.555 4.395z"
-            fill="#fff"
-          />
-          <path
-            d="M729.497 377l-14.959-10.035A15.926 15.926 0 00711 377a15.928 15.928 0 003.538 10.035L729.497 377z"
-            fill="#11457E"
-          />
-        </g>
-        <circle cx={768} cy={385} r={20} fill="#fff" />
-        <g filter="url(#prefix__filter3_d)">
-          <path
-            d="M768 401c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16z"
-            fill="#E20C17"
-          />
-          <path
-            d="M768 401c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16z"
-            fill="#E20C17"
-          />
-          <path
-            d="M765.401 391.1c-3.3 0-6.1-2.7-6.1-6.1 0-3.4 2.7-6.1 6.1-6.1 1.7 0 3.2.7 4.3 1.8-1.4-2-3.7-3.3-6.3-3.3-4.2 0-7.6 3.4-7.6 7.6 0 4.2 3.4 7.6 7.6 7.6 2.6 0 4.9-1.3 6.3-3.3-1 1.1-2.6 1.8-4.3 1.8z"
-            fill="#fff"
-          />
-          <path
-            d="M776.3 387.2l-2.6-.8-1.6 2.2v-2.8l-2.6-.8 2.6-.8v-2.8l1.6 2.2 2.6-.8-1.6 2.2 1.6 2.2z"
-            fill="#fff"
-          />
-          <path
-            d="M765.401 391.1c-3.3 0-6.1-2.7-6.1-6.1 0-3.4 2.7-6.1 6.1-6.1 1.7 0 3.2.7 4.3 1.8-1.4-2-3.7-3.3-6.3-3.3-4.2 0-7.6 3.4-7.6 7.6 0 4.2 3.4 7.6 7.6 7.6 2.6 0 4.9-1.3 6.3-3.3-1 1.1-2.6 1.8-4.3 1.8z"
-            fill="#fff"
-          />
-          <path
-            d="M776.3 387.2l-2.6-.8-1.6 2.2v-2.8l-2.6-.8 2.6-.8v-2.8l1.6 2.2 2.6-.8-1.6 2.2 1.6 2.2z"
-            fill="#fff"
-          />
-        </g>
-        <circle cx={842} cy={446} r={20} fill="#fff" />
-        <g clipPath="url(#prefix__clip2)" filter="url(#prefix__filter4_d)">
-          <path
-            d="M858 446a15.998 15.998 0 01-19.121 15.693 16.012 16.012 0 01-8.193-4.379A16.003 16.003 0 01842 430c4.243 0 8.313 1.686 11.314 4.686 3 3.001 4.686 7.071 4.686 11.314z"
-            fill="#006B35"
-          />
-          <path
-            d="M850.624 452.798H848.173v-.139a.216.216 0 00-.027-.162.207.207 0 00-.135-.092s-.162-.185-.278 0a.283.283 0 00-.044.15c0 .053.016.105.044.15a.627.627 0 000 .162v.139l-14.358-.463a1.965 1.965 0 001.78.902h12.671a3.238 3.238 0 000 .462.524.524 0 000 .255.207.207 0 00.254.115s.116 0 .139-.138h1.78a.513.513 0 00.324 0c.162 0 .37-.139.37-.81a.831.831 0 00-.069-.531zm-.532.948h-.555s0-.162-.231-.162a.372.372 0 00-.255.139h-.716a.278.278 0 010-.301h1.734s.115.254.023.324zM830.463 444.035s-.301.416-.393.878a1.979 1.979 0 000 .624s.139.486.393.509c.254.023.393-.254.462-.416.07-.162 0-.463 0-.486 0-.023 0 0-.231.139h-.208v-.393c0-.116.139-.832-.023-.855zM832.266 442.162s-.208-.232-.393-.255a.646.646 0 00-.485 0 1.99 1.99 0 00-.925.925v.162c0 .023 1.225-.624 1.78-.832-.046.069.023.046.023 0zM830.949 438.393s-.324-.3-.324-.416a.233.233 0 01.162-.162.5.5 0 01.19.045.5.5 0 01.157.117.882.882 0 010 .763c0 .116-.139.231-.185.231-.047 0 0-.208 0-.254a.746.746 0 000-.231v-.093z"
-            fill="#fff"
-          />
-          <path
-            d="M830.208 439.11c-.038.253-.038.51 0 .763v.786c0 .347.162.509.347.578a.408.408 0 00.324 0c.231 0 .277-.462.3-.624.023-.162 0-.37 0-.601 0-.232.139-.324.208-.324.07 0 0 .485 0 1.248 0 .324 0 .463.208.555.209.093.324 0 .463.162a.457.457 0 010 .208c.047.431.047.865 0 1.295v.624s.254-.161.347-.277c.261-.252.445-.573.532-.925.024-.3.024-.602 0-.902v-.578a.298.298 0 01.208 0c.161 0 .208.116.37.162a.836.836 0 00.924-.37.923.923 0 000-.693 2.858 2.858 0 00-.185-.648.187.187 0 010-.185v-.139a.692.692 0 00-.161-.416s-.301-.254-.463-.185c-.162.07-.185.324-.185.416.005.293.084.58.231.833.116.208.255.324.209.509a.26.26 0 010 .161h-.324a.827.827 0 01-.301-.323v-.671a.878.878 0 00-.185-.555s-.115-.139-.231 0-.254.393-.231.601a1.828 1.828 0 000 .347v.162c0 .185.139.347 0 .439 0 0-.116-.138-.139-.277-.02-.2-.02-.401 0-.601a5.837 5.837 0 000-.648c0-.3-.139-.786-.347-.832-.208-.046-.208.116-.254.231-.046.116 0 .324 0 .624v.694c0 .463.208.809 0 1.017-.208.209 0 0-.139 0s-.139-.277-.139-.416a4.01 4.01 0 010-.693v-.509c0-.093-.138-.162-.277-.139-.139.023-.208.162-.324.347a1.75 1.75 0 00-.231.717v.555a.164.164 0 01-.104.038.164.164 0 01-.104-.038c.069-.208.069-.416.069-.74a2.71 2.71 0 000-.555s0-.208-.161-.231c-.162-.023 0 0 0 0l-.255.023z"
-            fill="#fff"
-          />
-          <path
-            d="M832.936 438v.277a.55.55 0 00.231.255.492.492 0 00.393 0 .486.486 0 00.277-.185.365.365 0 000-.231v-.232c0-.023-.115 0-.162 0-.046 0 0 0 0 0v-.161c0-.024 0 0-.138 0-.139 0 0 .161 0 .161v-.115c0-.116-.601.162-.601.231zM837.56 441.399h-.231a.205.205 0 00-.081-.016.205.205 0 00-.081.016v.208c0 .208 0 0 0 0v-.185a.277.277 0 00-.324 0l-.208.301c-.208.3 0 .115-.139.138a.208.208 0 01-.127.044.21.21 0 01-.127-.044v-.3a.318.318 0 00-.289-.178.32.32 0 00-.289.178h-.162c-.162 0 0-.393-.139-.902-.138-.509 0-.694-.138-.855-.139-.162-.116-.324 0-.394.115-.069.277 0 .347 0 .069 0 0-.208-.185-.601a1.806 1.806 0 00-.324-.67.206.206 0 00-.162 0 .28.28 0 00-.185 0 .298.298 0 00-.185.162.42.42 0 000 .3c.056.213.095.429.116.648 0 .254 0 .138.138 1.017 0 .231 0 .416.116.763.116.347 0 .809 0 .879 0 .069-.185 0-.231 0-.046 0-.208-.347-.37-.347h-.532a.948.948 0 00-.439.462.759.759 0 000 .786.64.64 0 00.601.208c.162 0 .301-.208.347-.161.046.046 0 0 0 0a1.204 1.204 0 01-.162.508c-.142.2-.333.359-.555.463-.347.208-.555.346-.809.277a.835.835 0 01-.463-.231c0-.254 0-.463-.138-.786-.139-.324 0-.116-.116-.116s-.185.37-.231.578a1.362 1.362 0 000 .833c.084.233.248.429.462.555.245.163.542.229.833.184.306-.026.597-.147.832-.346.33-.216.581-.532.717-.902 0-.37 0-.694.231-.856.231-.161 0 0 .139 0 .138 0 0 .393 0 .532-.048.348-.175.68-.37.971a2.06 2.06 0 01-.717.717c-.281.165-.6.252-.925.254a1.225 1.225 0 01-1.017-.346 1.113 1.113 0 01-.208-.417 1.525 1.525 0 00-.185-.855s-.185.555-.185.601a2.045 2.045 0 000 .832c.078.28.249.525.485.694.312.188.683.254 1.041.185a3.347 3.347 0 001.202-.277 3.83 3.83 0 00.74-.509 2.58 2.58 0 00.601-.879 1.983 1.983 0 000-.67v-1.041h.162c.09.029.187.029.277 0h.185c.162 0 .162-.115.232-.138H837.005a.6.6 0 00.555-.347v-.925zm-3.468 1.064h-.278a.207.207 0 01-.036-.053.172.172 0 010-.126.177.177 0 01.036-.053.21.21 0 01.232 0 .237.237 0 010 .162s.092.023.046.07z"
-            fill="#fff"
-          />
-          <path
-            d="M836.288 443.364c.139.185.185.162.231.255.047.092 0 .369 0 .439h.162c.139 0 .139-.347.139-.439a.67.67 0 00-.162-.463.328.328 0 00-.254-.162.187.187 0 00-.162.185s-.046.07.046.185zM843.433 445.121v-.3c0-.046-.161 0-.254 0-.092 0-.324.162-.3.3.023.139 0 0 .185.139h.138v.254a.254.254 0 00.139.162h.324c.138 0 .578 0 .624-.208a.207.207 0 000-.254h-.786c-.046 0-.093.046-.07-.093zM837.099 440.15s-.185 0-.232.162a.416.416 0 000 .439.327.327 0 00.255.185.323.323 0 00.347 0s.092-.485.092-.531h-.416s-.046-.208-.046-.255zM840.891 441.26h-.185a.23.23 0 000 .255.499.499 0 00.251.306.484.484 0 00.396.017.462.462 0 00.185-.277v-.393a.183.183 0 00-.231 0v-.162.139s-.347.161-.416.115zM837.954 438.486c-.139 0-.139.555 0 .925.138.369 0 1.109.485 1.271a.551.551 0 00.532 0c.185-.162 0-.37.254-.809.255-.439.185-.393.232-.37.046.023 0 .462 0 .902 0 0 .208.555.601.624.285-.012.556-.127.763-.324.162-.115.277-.277.416-.254.139.023 0 0 .162 0s.439.393.74.347a.641.641 0 00.393-.324c.115-.162.115-.3.185-.324a.24.24 0 01.185 0v.185c0 .047.161 0 .185 0 .023 0 .277-.3.323-.416.047-.115 0-.231 0-.277 0-.047 0 0-.277 0h-.278c-.046 0-.161 0-.254-.278-.092-.277-.416-.393-.231-.578.185-.185 0-.138.185-.138 0 0 0-.417-.255-.671a.527.527 0 00-.393-.185c-.231 0-.3.416-.3.624.003.236.084.463.231.648.13.117.247.249.347.393v.601a.425.425 0 01-.37 0c-.185-.139-.231-.347-.278-.694a6.524 6.524 0 010-.74 1.65 1.65 0 000-.578c0-.138 0-.346-.208-.37-.208-.023-.254.209-.277.278a.861.861 0 000 .416c.039.174.094.344.162.509.015.153.015.308 0 .462a.915.915 0 01-.255.671.526.526 0 01-.393.138.507.507 0 01-.693-.323v-.717-.786a.366.366 0 00-.324 0c-.486.185-.601.994-.601 1.133v.162c0 .231 0 .393-.162.416-.162.023-.185 0-.231-.185a1.45 1.45 0 01-.347-.601v-.694c0-.208-.208-.092-.254-.069z"
-            fill="#fff"
-          />
-          <path
-            d="M838.717 437.653c-.162 0-.255.301-.278.324a.782.782 0 000 .347.287.287 0 000 .231h.278c.069 0 0-.139 0-.185 0-.046 0 0-.162 0s0-.162 0-.185c0-.023 0-.139.139-.254 0 0 .046-.278.023-.278zM840.22 437.699a.6.6 0 00-.161.393v.671h.138c.142-.21.199-.466.162-.717v-.208c0-.023-.115-.162-.139-.139zM846.462 443.133a6.958 6.958 0 00-.763-1.387c-.278-.44-.532-.879-.809-1.295-.278-.416 0-.856-.116-1.087v-.254s-.254-.463-.601-.971c0 0-.139-.185-.208-.185-.07 0-.185.254-.185.416-.024.13-.024.263 0 .393 0-.139-.231-.324-.255-.37a4.457 4.457 0 00-.462-.439c-.277-.208-.347-.208-.37-.185-.023.023 0 .115-.139.254a.938.938 0 000 .555 1.095 1.095 0 000 .162c.53.613 1.017 1.262 1.457 1.942.486 1.433.486 3.376.486 3.884v.671c0 .046.3-.254.369-.393.183-.34.24-.733.162-1.11 0 0 0-1.017-.162-2.081.162.254.278.509.394.717.294.664.65 1.299 1.063 1.896.254.046.301-.671.139-1.133zm-2.659-4.278h.231c.006.085.006.17 0 .255.016.13.016.262 0 .393l-.231-.648zM845.168 438.162c0 .139.116.185.254.439.018.115.018.232 0 .347v.37s.162-.139.232-.324a1.018 1.018 0 000-.809s-.185-.277-.347-.254a.296.296 0 00-.139.231z"
-            fill="#fff"
-          />
-          <path
-            d="M845.375 439.965v-.138c0-.139 0 0-.161.138a.35.35 0 000 .37.555.555 0 00.439.139s.254 0 .347-.208c.092-.208 0-.278 0-.37 0-.093 0 0 0 0v.162h-.139c-.023 0 0 0 0 0s-.462-.07-.486-.093zM849.121 440.52l-.138-.162a.232.232 0 00-.278 0v.255c0 .046 0 .208.439.555.44.346.37.277.417.254.046-.023 0 0 0-.208v-.532c0-.092.138 0 .208-.139a.318.318 0 000-.162.37.37 0 00-.185-.416.277.277 0 00-.324 0v.44h-.139v.115zM851.687 445.445v-.185c0-.185-.161-.185-.323-.185s-.232 0-.232.162.209 0 .232.231a.369.369 0 010 .162c0 .185-.255.185-.255.301v.162c0 .023.185 0 .486-.209.301-.208.231 0 .254-.138a.187.187 0 000-.185h-.254l.092-.116zM848.405 443.041s0-.694-.301-2.313c0-.462-.162-.947-.208-1.433h.347c.046 0 0-.185 0-.231 0-.047-.116-.208-.162-.324l-.277-.486s-.116-.346-.232-.323c-.115.023-.185.485-.208.809a3.97 3.97 0 000 1.202c.309 1.339.51 2.699.601 4.07v.925c0 .046.255-.255.347-.463.183-.456.215-.958.093-1.433z"
-            fill="#fff"
-          />
-          <path
-            d="M846.416 437.954a1.487 1.487 0 00-.231.717c0 .37 0 .439.139.994-.013.1-.013.201 0 .3 0 1.758.231 2.498.277 3.191a5.98 5.98 0 010 1.087.83.83 0 01-.277.439c-.421.4-.886.749-1.388 1.041h-.185c-.023 0 0 .185.208.231a1 1 0 00.833 0 2.086 2.086 0 001.017-.994c.172-.342.289-.709.347-1.087a11.556 11.556 0 00-.347-3.514s-.208-1.11 0-1.11v-.162a.672.672 0 000-.416c-.254-.463-.3-.786-.393-.763-.092.023 0 .023 0 .046zM850.23 442.116c.139-.139.139-.601 0-.555-.138.046-.971.624-1.086.74-.116.115-.185.162-.185.277-.013.1-.013.201 0 .301a8.84 8.84 0 001.271-.763zM849.908 442.462v.532c.02.231.02.463 0 .694 0 0 0 .277.139.185a1.11 1.11 0 00.254-.555 4.479 4.479 0 00-.254-.856s-.069-.046-.139 0zM852.497 439.249v.786s.185-.208.231-.44a1.149 1.149 0 000-.647c0-.162 0-.3-.231-.347a.254.254 0 00-.231 0v.324c.045.128.125.24.231.324z"
-            fill="#fff"
-          />
-          <path
-            d="M852.034 444.728c.162-.208.278-.254.324-.508a6.557 6.557 0 000-.971c.231.37.462.739.624 1.063l.278.37a1.67 1.67 0 000-1.133 11.415 11.415 0 00-.879-1.341 10.63 10.63 0 00-.185-1.734c-.231-1.017-.254-1.156 0-1.156s-.231-1.017-.37-1.272a.254.254 0 00-.393 0 .327.327 0 00-.115.37c0 .555.185 1.133.254 1.711.069.578.115.786.162 1.179l-.648-.878v-1.087c0-.023.162 0 .162-.139a1.687 1.687 0 00-.324-.647c-.3-.301-.231-.601-.346-.578-.116.023-.208.185-.208.254v1.203a2.914 2.914 0 01-.301-.463v-.115a.14.14 0 00.069.018.14.14 0 00.07-.018s-1.041-1.203-.948-.81c0 0-.255.74 0 1.133l1.063 1.411a3.805 3.805 0 000 .37c.157 1.071.203 2.156.139 3.237 0 .138-.139.439-.324.462-.185.023-.277 0-.37-.231-.092-.231-.277-.463-.439-.532a.46.46 0 00-.208-.023s-.231.208-.393.693c-.162.486-.185.671-.347.81a.494.494 0 01-.347 0c-.3 0-.393-.648-.439-.81a2.15 2.15 0 010-.67 2.018 2.018 0 000 1.642c.208.346.624.647.855.555.232-.093.37-.463.486-1.11a.442.442 0 01.393-.347c.324 0 .416.509.809.601a.994.994 0 00.879-.347c.185-.185.301-.601.116-2.543v-1.017l.647.947c0 .879.046 1.735.139 2.567 0 0-.047.116.115-.116z"
-            fill="#fff"
-          />
-          <path
-            d="M853.746 439.249h.347c-.046 0-.624-1.249-.879-1.203-.254.047-.185.301-.185.44 0 .138 0 .855.139 1.364.225 1.625.364 3.261.416 4.902a1.99 1.99 0 01-.555.763c-.185.184-.994.508-.994.716 0 .208.416.208.833 0a1.478 1.478 0 001.109-1.086 18.611 18.611 0 000-3.469 18.982 18.982 0 01-.231-2.427zM844.358 443.064h-.278c-.715.065-1.435.065-2.15 0h.393c.316-.064.61-.207.856-.417a1.066 1.066 0 00.439-.74.788.788 0 00-.416-.786.822.822 0 00-.763 0 1.054 1.054 0 00-.393.717v.509c0 .139-.648 0-1.203.277a1.508 1.508 0 00-.647.601v-.485c-.324-1.179-.463-1.48-.647-1.665-.185-.185-.232-.254-.37-.231-.139.023-.139.416-.139.509.016.348.111.688.277.994.123.287.201.591.232.902a2.064 2.064 0 01-.347 1.132c-.233.36-.561.649-.948.833a.73.73 0 01-.671 0 .46.46 0 01-.208-.324c.277-.169.533-.371.763-.601.361-.297.6-.717.671-1.179a1.463 1.463 0 00-.185-1.018v-.138c0-.139.138 0 .185 0 .046 0 0-.278-.139-.44a.67.67 0 00-.439-.346.546.546 0 00-.417.161c-.138.232 0 .555 0 .602 0 .046.185.138.301.323a.91.91 0 01.162.509c.03.153.03.31 0 .462-.212.412-.542.75-.948.971a6.074 6.074 0 000-.739s-.278.37-.393.809a.992.992 0 000 .231c-.44.254-.44.231-.833.486-.393.254-1.341.832-1.271.971.069.138 1.433-.416 1.503-.44l.531-.231c.027.116.074.225.139.324.099.161.234.297.395.397.16.101.342.163.53.181.34-.044.657-.198.902-.439a2.933 2.933 0 001.04-1.203.635.635 0 000 .324.98.98 0 00.324.37c.271.229.575.416.902.555.208 0 .624.231.832 0a.44.44 0 00.254-.162.639.639 0 000-.254c0-.162-.254-.116-.416-.324a.37.37 0 01-.139-.347c0-.139.185-.208.417-.277a10.51 10.51 0 011.387-.255c.3 0 .485 0 .555-.231.069-.231 0-.208 0-.393.053-.144.131-.277.231-.393 0 0 .277-.069.139-.092zm-1.827-1.503h.231c.093 0 0 0 .139.231h-.208c-.069 0-.208-.046-.162-.231zm-1.387 2.612v.417c0 .069-.139 0-.208 0a.788.788 0 01-.532-.671v-.439c0-.093.185 0 .439 0 .255 0 .532-.116.694 0a.277.277 0 010 .208c.092.37-.278.347-.393.578v-.093z"
-            fill="#fff"
-          />
-        </g>
-        <circle cx={799} cy={427} r={20} fill="#fff" />
-        <g clipPath="url(#prefix__clip3)" filter="url(#prefix__filter5_d)">
-          <path
-            d="M814.075 432.326a16.015 16.015 0 01-15.087 10.65 16.01 16.01 0 01-15.088-10.65h30.175z"
-            fill="#00793D"
-          />
-          <path
-            d="M815 426.988a15.715 15.715 0 01-.924 5.338h-30.175a16.17 16.17 0 01-.901-5.338 15.812 15.812 0 01.924-5.337h30.152c.613 1.713.925 3.518.924 5.337z"
-            fill="#fff"
-          />
-          <path
-            d="M814.075 421.651h-30.151a15.317 15.317 0 012.703-4.783 15.982 15.982 0 016.799-4.862 15.978 15.978 0 0115.896 2.77 15.975 15.975 0 014.753 6.875z"
-            fill="#000"
-          />
-          <path
-            d="M806.867 426.988l-10.651 5.337-9.589 4.806a15.965 15.965 0 01-2.726-4.806 16.16 16.16 0 01-.901-5.337 15.812 15.812 0 01.924-5.337 15.357 15.357 0 012.703-4.783l9.589 4.783 10.651 5.337z"
-            fill="#CD1225"
-          />
-          <path
-            d="M791.11 424.77l.508 1.294 1.317-.416-.693 1.202 1.132.785-1.363.208.115 1.363-1.016-.924-1.017.924.092-1.363-1.363-.208 1.156-.785-.694-1.202 1.317.416.509-1.294z"
-            fill="#fff"
-          />
-        </g>
-        <circle cx={646} cy={369} r={20} fill="#fff" />
-        <g filter="url(#prefix__filter6_d)">
-          <path
-            d="M630 369.046a16.103 16.103 0 002.94 9.254 16.019 16.019 0 007.719 5.865v-30.237a16.019 16.019 0 00-7.719 5.865 16.102 16.102 0 00-2.94 9.253z"
-            fill="#062493"
-          />
-          <path
-            d="M662.001 369.046a16.102 16.102 0 00-2.94-9.253 16.023 16.023 0 00-7.719-5.865v30.145a16.027 16.027 0 007.692-5.828 16.102 16.102 0 002.967-9.199z"
-            fill="#EC2938"
-          />
-          <path
-            d="M646.001 353a15.692 15.692 0 00-5.341.928v30.144a15.838 15.838 0 0010.682 0v-30.144a15.76 15.76 0 00-5.341-.928z"
-            fill="#fff"
-          />
-        </g>
-        <circle cx={687} cy={362} r={20} fill="#fff" />
-        <g filter="url(#prefix__filter7_d)">
-          <path
-            d="M687 346c-6.933 0-12.866 4.467-15.066 10.667h30.2c-2.267-6.2-8.2-10.667-15.134-10.667z"
-            fill="#000"
-          />
-          <path
-            d="M703 362a15.73 15.73 0 00-.933-5.333h-30.134A15.73 15.73 0 00671 362c0 1.867.333 3.667.933 5.333h30.2c.534-1.666.867-3.466.867-5.333z"
-            fill="#DC0201"
-          />
-          <path
-            d="M671.934 367.333c2.2 6.2 8.133 10.667 15.066 10.667 6.934 0 12.867-4.467 15.067-10.667h-30.133z"
-            fill="#FECD17"
-          />
-          <path
-            d="M672 367c2.2 6.2 8.133 10.667 15.067 10.667 6.933 0 12.866-4.467 15.066-10.667H672z"
-            fill="#FECD17"
-          />
-        </g>
-      </g>
-      <defs>
-        <filter
-          id="prefix__filter0_d"
-          x={702}
-          y={307}
-          width={58}
-          height={58}
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feMorphology
-            radius={4}
-            operator="dilate"
-            in="SourceAlpha"
-            result="effect1_dropShadow"
-          />
-          <feOffset dy={1} />
-          <feGaussianBlur stdDeviation={4.5} />
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" />
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>
-        <filter
-          id="prefix__filter1_d"
-          x={660}
-          y={290}
-          width={58}
-          height={58}
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feMorphology
-            radius={4}
-            operator="dilate"
-            in="SourceAlpha"
-            result="effect1_dropShadow"
-          />
-          <feOffset dy={1} />
-          <feGaussianBlur stdDeviation={4.5} />
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" />
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>
-        <filter
-          id="prefix__filter2_d"
-          x={698}
-          y={349}
-          width={58}
-          height={58}
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feMorphology
-            radius={4}
-            operator="dilate"
-            in="SourceAlpha"
-            result="effect1_dropShadow"
-          />
-          <feOffset dy={1} />
-          <feGaussianBlur stdDeviation={4.5} />
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" />
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>
-        <filter
-          id="prefix__filter3_d"
-          x={739}
-          y={357}
-          width={58}
-          height={58}
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feMorphology
-            radius={4}
-            operator="dilate"
-            in="SourceAlpha"
-            result="effect1_dropShadow"
-          />
-          <feOffset dy={1} />
-          <feGaussianBlur stdDeviation={4.5} />
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" />
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>
-        <filter
-          id="prefix__filter4_d"
-          x={813}
-          y={418}
-          width={58}
-          height={58}
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feMorphology
-            radius={4}
-            operator="dilate"
-            in="SourceAlpha"
-            result="effect1_dropShadow"
-          />
-          <feOffset dy={1} />
-          <feGaussianBlur stdDeviation={4.5} />
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" />
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>
-        <filter
-          id="prefix__filter5_d"
-          x={770}
-          y={399}
-          width={58}
-          height={58}
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feMorphology
-            radius={4}
-            operator="dilate"
-            in="SourceAlpha"
-            result="effect1_dropShadow"
-          />
-          <feOffset dy={1} />
-          <feGaussianBlur stdDeviation={4.5} />
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" />
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>
-        <filter
-          id="prefix__filter6_d"
-          x={617}
-          y={341}
-          width={58.001}
-          height={58}
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feMorphology
-            radius={4}
-            operator="dilate"
-            in="SourceAlpha"
-            result="effect1_dropShadow"
-          />
-          <feOffset dy={1} />
-          <feGaussianBlur stdDeviation={4.5} />
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" />
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>
-        <filter
-          id="prefix__filter7_d"
-          x={658}
-          y={334}
-          width={58}
-          height={58}
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feMorphology
-            radius={4}
-            operator="dilate"
-            in="SourceAlpha"
-            result="effect1_dropShadow"
-          />
-          <feOffset dy={1} />
-          <feGaussianBlur stdDeviation={4.5} />
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" />
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>
-        <clipPath id="prefix__clip0">
-          <path fill="#fff" d="M0 0h1440v840H0z" />
-        </clipPath>
-        <clipPath id="prefix__clip1">
-          <path fill="#fff" transform="translate(711 361)" d="M0 0h32v32H0z" />
-        </clipPath>
-        <clipPath id="prefix__clip2">
-          <path fill="#fff" transform="translate(826 430)" d="M0 0h32v32H0z" />
-        </clipPath>
-        <clipPath id="prefix__clip3">
-          <path fill="#fff" transform="translate(783 411)" d="M0 0h32v32H0z" />
-        </clipPath>
-      </defs>
-    </svg>
-  )
+        
+        <Img
+        onClick={()=> setActive('poland') } 
+        animate={{x : inView ? 10 : 0 , y : inView ? -36  : 0}}
+        initial={{ x: 0 , y : 0 }}
+        src="/assets/countries/poland.png" alt="Polska"/>
+        <Img 
+        onClick={()=> setActive('arabia') }
+        animate={{x : inView ? 94 : 0 , y : inView ? 70  : 0}}
+        initial={{ x: 0 , y : 0 }}
+        src="/assets/countries/arabia.png" alt="Arabia"/>
+        <Img 
+        onClick={()=> setActive('czech') }
+        src="/assets/countries/czech.png" alt="Czech"
+        animate={{x : inView ? 0 : 0 , y : inView ? 0  : 0}}
+        initial={{ x: 0 , y : 0 }}
+        />
+        
+        <Img 
+        onClick={()=> setActive('jordan') }
+        animate={{x : inView ? 68 : 0 , y : inView ? 44  : 0}}
+        initial={{ x: 0 , y : 0 }}
+        src="/assets/countries/jordan.png" alt="Jordan"/>
+        <Img
+        onClick={()=> setActive('nederland') }
+        animate={{x : inView ? -54 : 0 , y : inView ? -54  : 0}}
+        initial={{ x: 0 , y : 0 }} 
+        src="/assets/countries/nederland.png" 
+        alt="Netherland"/>
+        <Img 
+        onClick={()=> setActive('germany') }
+        animate={{x : inView ? -32 : 0 , y : inView ? -27  : 0}}
+        initial={{ x: 0 , y : 0 }}
+        src="/assets/countries/germany.png" alt="germany"/>
+        <Img 
+        
+        onClick={()=> setActive('france') }
+        animate={{x : inView ? -74 : 0 , y : inView ? -23  : 0}}
+        initial={{ x: 0 , y : 0 }}
+        src="/assets/countries/france.png" alt="France"/>
+        <Img 
+        onClick={()=> setActive('turkey') }
+        animate={{x : inView ? 34 : 0 , y : inView ? 30  : 0}}
+        initial={{ x: 0 , y : 0 }}
+        src="/assets/countries/turkey.png" 
+        alt="Turkey"/>
+    </MapaSection>
+  );
 }
 
-export default Mapa
+export default Mapa;
+const MapaSection = styled.div`
+  min-height:  840px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   position: relative;
+   
+   margin-left: auto;
+   margin-right: auto;
+   
+   .mapasvg{
+     transform: scale(0.9) translateY(100px);
+     width: 20%;
+     
+   }
+`;
+
+const Img = styled(motion.img)`
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    cursor: pointer;
+
+&:hover{
+    transform: scale(1.2);
+  }
+`;
+
+const Info = styled(motion.div)`
+  border-radius: 16px 16px 16px 0px;
+  padding: 16px 24px;
+  position: absolute;
+  background: #fff;
+  a{
+    color:#EB7700 ;
+  }
+`;

@@ -8,7 +8,10 @@ import Image from 'next/image'
 import Layout from '../Layout/Layout';
 import { activeLink } from '../atoms/atoms'
 import { useSetRecoilState } from 'recoil'
+import {useInView} from 'react-intersection-observer'
 const About = () => {
+    
+    const { ref, inView }  = useInView()
     const setActiveLink =useSetRecoilState(activeLink)
     useEffect(() => {
         // window.scrollTo(0, 0);
@@ -40,26 +43,35 @@ const About = () => {
             </PageHeader>
             <div className="container" style={{paddingTop : '256px',paddingBottom : '256px'}}>
                     <Header1 style={{textAlign : 'center',marginTop:'96px',marginBottom : '56px'}}>OUR VALUES</Header1>
-                    <AboutIcons>
+                    <AboutIcons ref={ref}>
                         <AboutIcon>
-                            <Circle>
+                            <Circle
+                            initial={{scale : 0.2, opacity : 0}}
+                            animate={{scale : inView ? 1 : 0.1 , opacity : inView ?  1 : 0}}
+                            >
                             <img  src='/assets/ico/quality.svg' alt=''/>
                             </Circle>
                             <h2>Quality</h2>
                             <AboutIconContent>Everything we do is to treat our Customers as the top priority.</AboutIconContent>
                         </AboutIcon>
                         <AboutIcon>
-                            <Circle>
-                            <img  src='/assets/ico/Group.svg' alt=''/>
+                            <Circle
+                            initial={{scale : 0.2, opacity : 0}}
+                            animate={{scale : inView ? 1 : 0.1 , opacity : inView ?  1 : 0,transition : {delay : 0.5}}}
+                            >
+                            <img  src='/assets/about/satisfaction.svg' alt=''/>
                             </Circle>
-                            <h2>Quality</h2>
+                            <h2>Satisfaction</h2>
                             <AboutIconContent>Everything we do is to treat our Customers as the top priority.</AboutIconContent>
                         </AboutIcon>
                         <AboutIcon>
-                            <Circle>
-                            <img  src='/assets/ico/Vector.svg' alt=''/>
+                            <Circle
+                            initial={{scale : 0.2, opacity : 0}}
+                            animate={{scale : inView ? 1 : 0.1 , opacity : inView ?  1 : 0,transition : {delay : 1}}}
+                            >
+                            <img  src='/assets/about/innovation.svg' alt=''/>
                             </Circle>
-                            <h2>Quality</h2>
+                            <h2>Innovation</h2>
                             <AboutIconContent>Everything we do is to treat our Customers as the top priority.</AboutIconContent>
                         </AboutIcon>
                     </AboutIcons>
@@ -101,7 +113,7 @@ const About = () => {
             </SectionAbout>
                 </div>
             <NumbersGrey/>
-            <Mapa/>
+            <Mapa bg={true} />
             {/* <MapaComp>
                 <img src='/assets/map.png' alt=""/>    
             </MapaComp> */}
@@ -217,7 +229,7 @@ const AboutIcon = styled.div`
     }
 `
 
-const Circle = styled.div`
+const Circle = styled(motion.div)`
     display : flex;
     justify-content : center;
     align-items : center;
