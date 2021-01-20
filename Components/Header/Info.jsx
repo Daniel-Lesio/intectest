@@ -1,7 +1,7 @@
 import  {useState, useEffect} from 'react';
 import styled from 'styled-components'
 // import {ContainerComp } from '../../styledComponents/StyledComponetns'
-import { motion } from 'framer-motion'
+import { motion , AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 // import twitter from '/assets/socials/twitter.svg'
@@ -99,15 +99,32 @@ const toggleLangs = () =>{
                         <svg    width="14" height="8"  fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.999939 1L7.01816 7L13.0364 1" stroke="#EB7700" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                        <Langs
-                        animate={{ y : langStatus ? '-200%' : '0px', opacity : langStatus ? 0 : 1  }}
-                        transition={{ type: "spring", stiffness: 50 }}
-        
-                        >
-                            <LangLink onClick={()=> changeActive(0) }>PLN</LangLink>
-                            <LangLink onClick={()=> changeActive(1) }>ENG</LangLink>
-                            <LangLink onClick={()=> changeActive(2) }>RUS</LangLink>
-                        </Langs>
+
+                        <AnimatePresence>
+                        {langStatus && (
+                            <Langs
+                            variants={LangsVariants}
+                            initial='hidden'
+                            animate='visible'
+                            exit='hidden'
+                            >
+                                <LangLink
+                                variants={LangVariants}
+                                custom={0}
+                                onClick={()=> changeActive(0) }>PLN</LangLink>
+                                <LangLink 
+                                variants={LangVariants}
+                                custom={2}
+                                
+                                onClick={()=> changeActive(1) }>ENG</LangLink>
+                                <LangLink 
+                                variants={LangVariants}
+                                custom={4}
+                                
+                                onClick={()=> changeActive(2) }>RUS</LangLink>
+                            </Langs>
+                        )}
+                    </AnimatePresence>
                     </LangBtn>
                 </Nav>
             </div>           
@@ -133,7 +150,7 @@ const SocialIcon = styled.div`
 const Langs = styled(motion.div)`
 
     position : absolute;
-    background:#fff;
+    
     width : 100%;
     min-height : 100px;   
     top : 100%;
@@ -142,9 +159,9 @@ const Langs = styled(motion.div)`
     display : flex;
     flex-direction : column;
     justify-content : space-evenly;
+    background:#fff;
 `
 const LangBtn = styled.div`
-
     cursor: pointer;
     z-index : 2;
     position : relative;
@@ -189,7 +206,7 @@ const Nav = styled.div`
     align-items : center;
     justify-content : flex-end;
 `
-const LangLink = styled.div`
+const LangLink = styled(motion.div)`
     padding-left : 10px;
     cursor: pointer;
     &:hover{
@@ -227,3 +244,18 @@ const InfoLinks = styled.span`
     max-width : 1120px!important;
     }
 `
+
+const LangsVariants = {
+    visible : { opacity : 1 },
+    hidden: { opacity : 0 },
+    exit : { opacity : 0 }
+}
+const LangVariants = {
+    visible : i => (
+        { opacity : 1 , x : 0 , transition : {
+            delay : 0.1 * i 
+        } }
+    ),
+    hidden: { opacity : 0 , x : -100 },
+    exit : { opacity : 0, x : 100 }
+}
