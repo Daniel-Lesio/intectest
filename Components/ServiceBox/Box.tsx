@@ -11,11 +11,11 @@ const Box = ({order,box}) => {
     useEffect(()=>{
         if(order % 2 === 0){
             setOdd(true)
-            console.log("zero")
+            
         }
     },[order])
     return (
-        <BoxComp>
+        <BoxComp id={order}>
             {
                 !odd  && (
                     <Content>

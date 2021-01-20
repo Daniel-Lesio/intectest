@@ -59,7 +59,7 @@ const Services = () => {
         <div className='container' style={{paddingTop : '156px',paddingBottom : '156px'}}>
             {
                 boxes.map((box,index)=>(
-                    <Box key={index} order={index} box={box}  />
+                    <Box key={index} order={index} box={box}   />
                 ))   
             }
         </div>

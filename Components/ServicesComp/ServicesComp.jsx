@@ -56,6 +56,7 @@ const ServicesComp = () => {
           <motion.img src='/assets/active/arrow_right_down.svg' style={{position : 'absolute'}} alt="" animate={{y : 125 , x : 125 , scale : 1 }} initial={{y:0,x:0,scale : 0}}/> */}
           </Circle0>
           {/* Prawe dolne -2 */}
+          <Link href='Services#1'>
           <Circle1
           onMouseOver={()=>setHovered(2)}
           onMouseLeave={()=>setHovered(null)} 
@@ -87,7 +88,9 @@ const ServicesComp = () => {
           </svg>
 
           </Circle1>
+          </Link>
           {/* lewe dolne 1 */}
+          <Link href='Services#0'>
           <Circle1
                 onMouseOver={()=>setHovered(1)}
                 onMouseLeave={()=>setHovered(null)} 
@@ -113,7 +116,9 @@ const ServicesComp = () => {
                       }}
                       >Engineering & Project Management</CircleInfo>
                     </Circle1>
+                    </Link>
                     {/* lewe gorne 3 */}
+                    <Link href='Services#2'>
                     <Circle1
                     onMouseOver={()=>setHovered(3)}
                     onMouseLeave={()=>setHovered(null)} 
@@ -141,7 +146,9 @@ const ServicesComp = () => {
                       Procurement
                       & Construction</p></CircleInfo>
                     </Circle1>
+                    </Link>
                     {/* prawe gorne 4 */}
+                    <Link href='3'>
                     <Circle1
                     
                     onMouseOver={()=>setHovered(4)}
@@ -165,6 +172,7 @@ const ServicesComp = () => {
                       }}
                       >Greneral contractor</CircleInfo>
                     </Circle1>
+                    </Link>
                     
        </ServiceLeft>
         <div className="service-right">

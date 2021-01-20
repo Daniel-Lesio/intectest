@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import styled from 'styled-components';
 import { Header1, Paragraph  } from "../styledComponents/styledComponents";
 import Mapa from '../Components/Mapa/Mapa'
@@ -10,16 +10,24 @@ import { activeLink } from '../atoms/atoms'
 import { useSetRecoilState } from 'recoil'
 import {useInView} from 'react-intersection-observer'
 const About = () => {
-    
+    const [posx, setposx] = useState(-480)
+   
     const { ref, inView }  = useInView()
     const setActiveLink =useSetRecoilState(activeLink)
     useEffect(() => {
         // window.scrollTo(0, 0);
-        setActiveLink("About")    
+        setActiveLink("About")
+           
     },[] );
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setposx(posx + 100)
+        }, 1000);
+        return () => clearInterval(interval);
+      }, []);
     return (
         <Layout>
-            <PageHeader>
+                <PageHeader>
             <Image
                     src='/assets/news.svg'
                     layout='fill'
@@ -118,18 +126,35 @@ const About = () => {
                 <img src='/assets/map.png' alt=""/>    
             </MapaComp> */}
             <Partners className='container'>
-                <Carousel drag="x">
+                <h1 style={{marginTop : 100,marginBottom : 56,fontFamily : 'lato'}}>Partners</h1>
+                <Carousel drag="x"
+                animate={{x:posx}}
+                >
                 <img src='/assets/about/logo/l_partners01.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners02.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners03.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners04.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners05.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners06.png' alt=""/>    
                 <img src='/assets/about/logo/l_partners01.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners02.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners03.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners04.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners05.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners06.png' alt=""/>    
                 <img src='/assets/about/logo/l_partners01.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners02.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners03.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners04.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners05.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners06.png' alt=""/>    
                 <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners02.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners03.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners04.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners05.png' alt=""/>    
+                <img src='/assets/about/logo/l_partners06.png' alt=""/>    
+                
                 </Carousel>    
             </Partners>          
         </Layout>
@@ -334,11 +359,9 @@ img{
    
 }`
 const Partners = styled.div`
-  
    position : relative; 
   grid-template-columns : repeat(1,1fr);
-  margin-bottom : 104px;
-  height : 100px;
+    height : 332px;
   @media (min-width: 640px) {
         grid-template-columns : repeat(2,1fr);
         
@@ -366,10 +389,16 @@ const Carousel = styled(motion.div)`
     display : flex;
     align-items : center;
     cursor : grab;
+    ;
     img{
         margin-left : 16px;
         margin-right : 16px;
         pointer-events:none;
+        height:  40px;
+        margin-left: 35px;
+        margin-right: 35px;
+        width: 140px;
+        
     }      
 `
 const AboutImage = styled.div`
