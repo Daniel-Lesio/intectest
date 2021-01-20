@@ -106,7 +106,7 @@ const toggleLangs = () =>{
                             variants={LangsVariants}
                             initial='hidden'
                             animate='visible'
-                            exit='hidden'
+                            exit='exit'
                             >
                                 <LangLink
                                 variants={LangVariants}
@@ -257,5 +257,5 @@ const LangVariants = {
         } }
     ),
     hidden: { opacity : 0 , x : -100 },
-    exit : { opacity : 0, x : 100 }
+    exit : { opacity : 0 , scale : 0.9 }
 }
