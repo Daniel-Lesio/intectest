@@ -84,7 +84,7 @@ const NewsComp = ({data}) => {
                         <NewsTitle>{d.title}</NewsTitle>
                         <NewsContent>Floating solar power plants are more advantageous than ground-mounted projects, here are some of them.</NewsContent>
                         <div className="article-footer">
-   <div className="date">
+   <div className="date" style={{color : '#959595!important'}}>
      {d.date}
 
    </div>

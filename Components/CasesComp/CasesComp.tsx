@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Link from 'next/link'
 import {motion} from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
@@ -47,6 +47,23 @@ const Cases = () => {
     function changeActive(id){
         setcaseActive(id)
     }
+    useEffect(() => {
+      const interval = setInterval(() => {
+        if(caseActive == 0){
+          setcaseActive(1)
+        }
+        if(caseActive == 1){
+          setcaseActive(2)
+        }
+        if(caseActive == 2){
+          setcaseActive(3)
+        }
+        if(caseActive == 3){
+          setcaseActive(0)
+        }
+      }, 500);
+      return () => clearInterval(interval);
+    }, []);
     return (
         <section id="case">
             <motion.div animate={{x: caseActive === 0 ? 0 : 1000}} initial={{x:0}} >
@@ -69,11 +86,11 @@ const Cases = () => {
         animate='visible'
         >
           <h1
-          variants={childrenVariables}
+          
           
           >CASE STUDY</h1>
           <p
-          variants={childrenVariables}
+          
           >NTEC delivers projects on-time and according to quality standards, providing professional and sustainable energy solutions without compromise.</p>
         </motion.div>
         <div className="case-btns">

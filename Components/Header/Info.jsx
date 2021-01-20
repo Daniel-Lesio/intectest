@@ -29,7 +29,7 @@ const [twitterIcon ,hoverTwitterIcon ] = useState(false)
 const [facebookIcon ,hoverFacebookIcon] = useState(false)
 const [linkedIcon ,hoverLinkedIcon] = useState(false)
 const [] = useState(false)
-    const [langStatus , setLangStatus] = useState(true)
+const [langStatus , setLangStatus] = useState(false)
 const [langActive , changeLangActive] = useState('')
 const  [langs , setLangs]  =  useState([])
  
