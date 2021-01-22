@@ -7,7 +7,7 @@ const Certificates = () => {
     <section id="certificate">
       <h1>CERTIFICATE</h1>
       <div className="container" style={{display:'flex',justifyContent:'center'}}>
-      <Link href='/Certificates'>
+      <Link href='/Certificates#1'>
           <a>
           <Image src='/assets/cert1.png'
         width={80}
@@ -16,7 +16,7 @@ const Certificates = () => {
           </a>
         </Link>
         <div style={{width: '100px',height : '100px'}}></div>
-        <Link href='/Certificates'>
+        <Link href='/Certificates#2'>
           <a>
           <Image src='/assets/cert2.png'
         width={80}

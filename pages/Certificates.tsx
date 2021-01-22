@@ -27,7 +27,7 @@ const Services = () => {
             </div>
             </PageHeader>
         <CertificatesPage className='container' style={{paddingTop : '156px',paddingBottom : '0px'}}>
-            <div className="box1">
+            <div className="box1" id='1'>
                 <Image
                 src='/assets/cert1.png'
                 width={186}
@@ -41,7 +41,7 @@ const Services = () => {
 We empower our sustainability concepts with cutting-edge tools and software, utilized by our experience and innovative insight.</p>
                 </Text>
             </div>
-            <div className="box2">
+            <div className="box2" id="2">
                 
                 <Text>
                     <h1 style={{textAlign : 'left'}}>Lorem, ipsum.</h1>
@@ -51,7 +51,7 @@ We empower our sustainability concepts with cutting-edge tools and software, uti
 We empower our sustainability concepts with cutting-edge tools and software, utilized by our experience and innovative insight.</p>
                 </Text>
                 <Image
-                src='/assets/cert1.png'
+                src='/assets/cert2.png'
                 width={186}
                 height={277}
                 />
