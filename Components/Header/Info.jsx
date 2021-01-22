@@ -11,16 +11,24 @@ import Link from 'next/link'
 
 const languages = [
     {
-        name : 'Polski',
-        short : 'PLN'
-    },
-    {
         name : 'English',
-        short : 'ENG'
+        short : 'EN'
     },
     {
-        name : 'Russian',
-        short : 'RUS'
+        name : 'Turkey',
+        short : 'TR'
+    },
+    {
+        name : 'Polish',
+        short : 'PL'
+    },
+    {
+        name : 'Germany',
+        short : 'DE'
+    },
+    {
+        name : 'Saudi',
+        short : 'ar-SA'
     },
 ]
 
@@ -111,17 +119,30 @@ const toggleLangs = () =>{
                                 <LangLink
                                 variants={LangVariants}
                                 custom={0}
-                                onClick={()=> changeActive(0) }>PLN</LangLink>
+                                onClick={()=> changeActive(0) }>EN</LangLink>
                                 <LangLink 
                                 variants={LangVariants}
                                 custom={2}
                                 
-                                onClick={()=> changeActive(1) }>ENG</LangLink>
+                                onClick={()=> changeActive(1) }>TR</LangLink>
                                 <LangLink 
                                 variants={LangVariants}
                                 custom={4}
                                 
-                                onClick={()=> changeActive(2) }>RUS</LangLink>
+                                onClick={()=> changeActive(2) }>PL
+                                </LangLink>
+                                <LangLink 
+                                variants={LangVariants}
+                                custom={4}
+                                
+                                onClick={()=> changeActive(3) }>DE
+                                </LangLink>
+                                <LangLink 
+                                variants={LangVariants}
+                                custom={4}
+                                
+                                onClick={()=> changeActive(4) }>ar-SA
+                                </LangLink>
                             </Langs>
                         )}
                     </AnimatePresence>

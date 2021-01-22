@@ -1,19 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import Link from 'next/link'
-import {motion} from 'framer-motion'
+import {motion ,useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
 
-// import image1x1 from '../../assets/cases/Case_Study_1.jpg'
-// import image1x2 from '../../assets/cases/Case_Study_1@2x.jpg'
-
-// import image2x1 from '../../assets/cases/Case_Study_2.jpg'
-// import image2x2 from '../../assets/cases/Case_Study_2@2x.jpg'
-
-// import image3x1 from '../../assets/cases/Case_Study_3.jpg'
-// import image3x2 from '../../assets/cases/Case_Study_3@2x.jpg'
-
-// import image4x1 from '../../assets/cases/Case_Study_4.jpg'
-// import image4x2 from '../../assets/cases/Case_Study_4@2x.jpg'
 import Image from 'next/image'
 const cities = [
     {
@@ -39,6 +28,7 @@ const cities = [
 ]
 
 const Cases = () => {
+  const control = useAnimation()
     const {ref,inView} = useInView({
         threshold : 0
       })
@@ -49,18 +39,7 @@ const Cases = () => {
     }
     useEffect(() => {
       const interval = setInterval(() => {
-        if(caseActive == 0){
-          setcaseActive(1)
-        }
-        if(caseActive == 1){
-          setcaseActive(2)
-        }
-        if(caseActive == 2){
-          setcaseActive(3)
-        }
-        if(caseActive == 3){
-          setcaseActive(0)
-        }
+        
       }, 500);
       return () => clearInterval(interval);
     }, []);
@@ -75,10 +54,6 @@ const Cases = () => {
             <motion.div animate={{x: caseActive === 2 ? 0 : 1000}} initial={{x:0}}>
                 <Image src='/assets/cases/Case_Study_2@2x.jpg' layout='fill'/>
             </motion.div>
-            <motion.div animate={{x: caseActive === 3 ? 0 : 1000}} initial={{x:0}}>
-                <Image src='/assets/cases/Case_Study_2@2x.jpg' layout='fill'/>
-            </motion.div>
-            
     <div className="container case-container">
         <motion.div ref={ref}  className="case-text"
         variants={containerVariants}
@@ -118,10 +93,6 @@ const Cases = () => {
 
 export default Cases;
 
-const variants = {
-    visible: { x: 0 },
-    hidden: { x: 110 },
-  }
 
 
   const containerVariants = {

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 function ArrowSvg(props) {
-console.log("arrowSvg : " , props.color)
     return (
     <Svg
     hovered={props.hovered}
