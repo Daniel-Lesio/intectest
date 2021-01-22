@@ -10,6 +10,7 @@ import Layout from '../Layout/Layout'
 import Box from "../Components/ServiceBox/Box";
 import { activeLink } from '../atoms/atoms'
 import { useSetRecoilState } from 'recoil'
+import Button from '../Layout/Button'
 
 
 const Services = () => {
@@ -56,12 +57,16 @@ const Services = () => {
                 <Paragraph style={{textAlign : 'center'}}>NTEC provides energy solutions to international investors with its power-plant installation projects, design, construction and production phases. We can be your General Contractor, we can make project development or operations & maintenance. We can even do whole EPC – this is your call!</Paragraph>
             </div>
             </PageHeader>
-        <div className='container' style={{paddingTop : '156px',paddingBottom : '156px'}}>
+        <div className='container' style={{paddingTop : '156px',paddingBottom : '0px'}}>
             {
                 boxes.map((box,index)=>(
                     <Box key={index} order={index} box={box}   />
                 ))   
             }
+        </div>
+        <div style={{display:'flex',justifyContent : 'center'}}>
+        <Button value='ASK US'  to='/Contact' arrow/>
+        <div style={{height : '190px'}}></div>
         </div>
         </Layout>
     );

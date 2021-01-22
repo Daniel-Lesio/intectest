@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
 import ArrowSvg from "./ArrowSvg";
-
+import Link from 'next/link'
 const Button = (props) => {
     const [arrowColor,setArrowColor] = useState('#008440')
     const [hovered , changeHovered] = useState(false)
@@ -39,6 +39,8 @@ const Button = (props) => {
         
     }, [props]);    
     return (
+        <Link href={props.to}>
+        <a>
         <ButtonComp 
         color={props.color}
         onMouseEnter={()=>changeArrowColor(true)}
@@ -51,6 +53,8 @@ const Button = (props) => {
                 )
             }            
         </ButtonComp>
+        </a>
+        </Link>
     );
 }
 
@@ -68,9 +72,10 @@ const ButtonComp = styled.div`
     align-items : center;
     border : solid 2px #008440;
     transition : all ease-in-out .3s;
-    width : 100%;
-    max-width : 148px;
+    min-width : 148px;
+    max-width: 100%;
     min-height : 48px;
+    
     &:hover{
         background : ${props=> props.color === 'white'  ? '#008440' :'#fff' };
         color : ${props=>props.color === 'white' ? '#fff':'#008440'};

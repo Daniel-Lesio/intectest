@@ -7,7 +7,7 @@ const Reference = (props) => {
     const[ images ,setImages] = useState([])
     console.log('props :' ,props)    
     const [posx, setposx] = useState(-480)
-    
+    const [hovered,setHovered] = useState(false)    
     useEffect(() => {
         if(props.obj.id === 0){
             setWhite(true)
@@ -29,10 +29,18 @@ const Reference = (props) => {
                 <h3 style={{fontWeight : 900}}>Place of project: <span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.place}</span></h3>
                 <h3 style={{fontWeight : 900}}>CAPACITY :<span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.capacity}</span></h3>
                 <h3 style={{fontWeight : 900}}>DATE OF COMPLETION: <span  style={{fontWeight:400 , textTransform  : 'capitalize',paddingLeft : '10px'}}>{props.obj.completion}</span></h3>
-                <Arrow onClick={()=>slide()} >
-                        <svg width="19" height="16" fill="none">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M18.7071 8.70737C19.0976 8.31684 19.0976 7.68368 18.7071 7.29315L12.3432 0.92913C11.9527 0.538602 11.3195 0.538596 10.929 0.929117C10.5385 1.31964 10.5385 1.9528 10.929 2.34333L15.5858 7.00023L6.00933 7.00014C6.00622 7.00011 6.00311 7.00009 6 7.00009L1.50456 7.00009L1.00001 7.00009L1 7.00009C0.447715 7.00009 0 7.44781 0 8.00009C0 8.55238 0.447715 9.00009 1 9.00009H1.4995L15.5858 9.00023L10.9289 13.657C10.5384 14.0476 10.5383 14.6807 10.9289 15.0713C11.3194 15.4618 11.9526 15.4618 12.3431 15.0713L18.7071 8.70737Z" fill="#EB7700"/>
-                        </svg>  
+                <Arrow onClick={()=>slide()} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} >
+                        {!hovered && (
+                                    <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M0.292898 8.70737C-0.0976295 8.31684 -0.0976353 7.68368 0.292885 7.29315L6.65678 0.92913C7.04731 0.538602 7.68047 0.538596 8.071 0.929117C8.46153 1.31964 8.46153 1.9528 8.07101 2.34333L3.4142 7.00023L12.9907 7.00014C12.9938 7.00011 12.9969 7.00009 13 7.00009L17.4954 7.00009L18 7.00009L18 7.00009C18.5523 7.00009 19 7.44781 19 8.00009C19 8.55238 18.5523 9.00009 18 9.00009H17.5005L3.41422 9.00023L8.07112 13.657C8.46165 14.0476 8.46165 14.6807 8.07113 15.0713C7.68061 15.4618 7.04745 15.4618 6.65692 15.0713L0.292898 8.70737Z" fill="#EB7700"/>
+                                </svg>
+                    )}
+                        {hovered && (
+                                                        <svg style={{transform : 'rotate(180deg)'}} width="29" height="16" viewBox="0 0 29 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fillRule="evenodd" clipRule="evenodd" d="M28.7071 7.29284L22.3431 0.92888C21.9526 0.538355 21.3195 0.538355 20.9289 0.92888C20.5384 1.3194 20.5384 1.95257 20.9289 2.34309L25.5858 6.99995H2.00099C2.00066 6.99995 2.00033 6.99995 2 6.99995L1 6.99995C0.447715 6.99995 0 7.44766 0 7.99995C0 8.55223 0.447715 8.99995 1 8.99995H2H25.5858L20.9289 13.6568C20.5384 14.0473 20.5384 14.6805 20.9289 15.071C21.3195 15.4615 21.9526 15.4615 22.3431 15.071L28.7071 8.70705C29.0976 8.31653 29.0976 7.68336 28.7071 7.29284Z" fill="white"/>
+                                                    </svg>
+                                  
+                        )}  
                 </Arrow>
             </Descriptions>
             <Wrapper>
@@ -96,23 +104,16 @@ justify-content : center;
 align-items : center;
 width : 48px;
 height : 48px;
-border: 2px solid #EB7700;
 border-radius : 50%;
 transition : all ease-in-out .3s;
-svg{
-    transition : all ease-in-out .3s;
-
-}
+box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.14);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+            
 &:hover{
     background : #EB7700;
     color : white;
-    svg{
-        transform : scaleX(1.3);
-    }
-    path{
-        fill : white;
-        
-    }
+
+
 }    
 `;
 const ReferenceImage = styled.figure`

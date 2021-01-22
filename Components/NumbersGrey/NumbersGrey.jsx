@@ -55,10 +55,10 @@ const NumbersGrey = () => {
     
   
     return (
-        <section id='numbers' style={{background : '#C6C7C8'}} className='container bg-grey'>
+        <section id='numbers'  className='container bg-grey'>
       <Image
-        style={{zIndex : -1}}
-        src='/assets/orange-numbers.svg'
+        
+        src='/assets/about/expirience-number_green.svg'
         layout='fill'
         />      
         <h1 style={{fontSize : '48px'}}>OUR EXPIRIENCE</h1>

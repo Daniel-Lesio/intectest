@@ -87,7 +87,7 @@ const TestimonialsComp = ({data}) => {
                                 )
                             }                  
 
-              </div>
+                    </div>
                     </div>
             </div>
             <CarouselWrapper ref={elem}>

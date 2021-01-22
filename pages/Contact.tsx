@@ -23,7 +23,7 @@ const Contact = () => {
             <div style={{height : 112}}></div>
             <FormSection className='container'>
                 <Adress>
-                    <p style={{color:'#008440',fontSize : 16,lineHeight :'24px'}}>Address</p>
+                    <p style={{color:'#008440',fontSize : '16px',lineHeight :'24px'}}>Address</p>
             <div style={{height : 9}}></div>
                     <p>Aleja 29 Listopada 20 <br/>
                         31-401 Kraków<br/>
@@ -47,7 +47,7 @@ const Contact = () => {
                     <textarea placeholder='SEND MESSAGE' name="message" id="message" cols={30} rows={5}></textarea>
                     <div style={{height : '32px'}}></div>
                     <div style={{ display : 'flex',justifyContent:  'center', alignItems : 'center' }}>
-                    <Button value='SEND' arrow /> 
+                    <Button value='SEND' to='/Contact' arrow /> 
                     </div>
                     <div style={{height : '24px'}}></div>
                     
@@ -58,8 +58,8 @@ const Contact = () => {
                     
     <Offices className='container'>
         <Office>
-            <p style={{color:'#008440'}}>GERMANY</p>
-            <p style={{fontSize : '24px',lineHeight :'36px'}}>
+            <h2 style={{color:'#008440'}}>GERMANY</h2>
+            <p>
             Frauentorgraben 5 <br/>
         90443 Nürnberg<br/>
         +49 911 2847 88489<br/>
@@ -70,20 +70,20 @@ const Contact = () => {
             
         </Office>
         <Office>
-            <p style={{color:'#008440'}}>GERMANY</p>
-            <div style={{fontSize : '24px',lineHeight :'36px'}}>
+            <h2 style={{color:'#008440'}}>GERMANY</h2>    
+            <p>
             Frauentorgraben 5 <br/>
         90443 Nürnberg<br/>
         +49 911 2847 88489<br/>
         <a  style={{color:'#EB7700',textDecoration : 'underline'}} href="mailto:info@in-tecenergy.com">info@in-tecenergy.com</a>
 
-            </div>
+            </p>
             <div style={{height : '8px'}}></div>
 
         </Office>
         <Office>
-            <p style={{color:'#008440'}}>GERMANY</p>
-            <p style={{fontSize : '24px',lineHeight :'36px'}}>
+            <h2 style={{color:'#008440'}}>GERMANY</h2>
+            <p>
             Frauentorgraben 5 <br/>
         90443 Nürnberg<br/>
         +49 911 2847 88489<br/>
@@ -94,8 +94,8 @@ const Contact = () => {
                     
         </Office>
         <Office>
-            <p style={{color:'#008440'}}>GERMANY</p>
-            <p style={{fontSize : '24px',lineHeight :'36px'}}>
+            <h2 style={{color:'#008440'}}>GERMANY</h2>
+            <p>
             Frauentorgraben 5 <br/>
         90443 Nürnberg<br/>
         +49 911 2847 88489<br/>
@@ -105,8 +105,8 @@ const Contact = () => {
             <div style={{height : '8px'}}></div>
             </Office>
         <Office>
-            <p style={{color:'#008440'}}>GERMANY</p>
-            <p style={{fontSize : '24px',lineHeight :'36px'}}>
+            <h2 style={{color:'#008440'}}>GERMANY</h2>
+            <p>
             Frauentorgraben 5 <br/>
         90443 Nürnberg<br/>
         +49 911 2847 88489<br/>
@@ -128,7 +128,7 @@ export default Contact;
 
 const PageHeader = styled.div`
     color : white;
-    text-transform : uppercase;
+    
     margin-top : 160px;
     min-height : 355px;
     padding-top : 0px;
@@ -149,7 +149,7 @@ const Adress = styled.div`
 display : flex;
 flex-direction : column;
 text-transform : uppercase;
-font-size : 24px;
+font-size : 20px;
 line-height :32px;  
 `;
 
@@ -198,5 +198,19 @@ const Offices = styled.div`
 
 const Office = styled.div`
     min-height : 200px;
-    
+    h2{
+        font-family: Lato;
+        font-size: 16px;
+        font-style: normal;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: left;
+
+    }   
+    p{
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 32px;
+    } 
 `;

@@ -9,6 +9,7 @@ import Layout from '../Layout/Layout';
 import { activeLink } from '../atoms/atoms'
 import { useSetRecoilState } from 'recoil'
 import {useInView} from 'react-intersection-observer'
+import ButtonWhite from '../Layout/ButtonWhite'
 const About = () => {
     const [posx, setposx] = useState(-480)
    
@@ -107,12 +108,11 @@ const About = () => {
                     We can be your General Contractor, we can make project development or operations & maintenance. We can even do whole EPC – this is your call!
                     </Paragraph>
                     <div style={{height : 32}}></div>
-               
-                    <ButtonWhite>
-                        <p style={{marginRight : 24}}>MORE</p>
-                        <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path className='path' fillRule="evenodd" clipRule="evenodd" d="M10.3795 0.477212L13.8407 3.93403C14.0531 4.14615 14.0531 4.49008 13.8407 4.70221L10.3794 8.15902C10.1671 8.37115 9.82268 8.37115 9.61028 8.15902C9.39788 7.94689 9.39788 7.60297 9.61028 7.39084L12.1431 4.8613L0.543882 4.8613C0.243504 4.8613 -3.62481e-07 4.61811 -3.37193e-07 4.31812V4.31812C-3.11904e-07 4.01812 0.243505 3.77493 0.543883 3.77493L12.1431 3.77493L9.61028 1.24539C9.39789 1.03327 9.39789 0.689339 9.61028 0.477212C9.82268 0.265084 10.1671 0.265084 10.3795 0.477212Z" fill="white"/></svg>
-                    </ButtonWhite>
-                
+                    <div>
+
+                    <ButtonWhite  color='white' value='MORE' arrow to='/Services'/>               
+                    </div>
+                                
                 </Left>
                 <Right>
                     <img src='/assets/fot_about_us_home.jpg' alt=""/>
@@ -126,7 +126,7 @@ const About = () => {
                 <img src='/assets/map.png' alt=""/>    
             </MapaComp> */}
             <Partners className='container'>
-                <h1 style={{marginTop : 100,marginBottom : 56,fontFamily : 'lato'}}>Partners</h1>
+                <h1 style={{marginTop : 100,marginBottom : 56,fontFamily : 'lato',fontSize :'32px'}}>PARTNERS</h1>
                 <Carousel drag="x"
                 animate={{x:posx}}
                 >
@@ -284,6 +284,7 @@ const SectionAbout = styled.section`
     min-height : 100vh;
     padding-top : 100px;
     padding-bottom : 100px;
+    z-index: 0;
     img{
         z-index : -1;
     }
@@ -292,7 +293,7 @@ const SectionAbout = styled.section`
             z-index : 1;
         }
         display : grid;
-    grid-template-columns :  1fr;
+        grid-template-columns :  1fr;
     gap :  96px;
     @media (min-width: 768px) {
         grid-template-columns : 352px 1fr;
@@ -300,11 +301,14 @@ const SectionAbout = styled.section`
     }
 `
 const Left = styled.div`
+    
     color : white;
     display : flex;
     justify-content :center;
     flex-direction : column;
     align-items : flex-start;
+    z-index: 10;
+    
 `
 
 const Right = styled.figure`
@@ -323,7 +327,7 @@ const Right = styled.figure`
     }
 `
 
-const ButtonWhite = styled.div`
+const ButtonWhiteComp = styled.div`
     cursor: pointer;
     border : solid 3px white;
     border-radius : 50px;

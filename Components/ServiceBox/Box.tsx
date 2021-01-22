@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from 'react';
 import styled from 'styled-components';
-import { Header1, Paragraph } from '../../styledComponents/styledComponents';
 import { useInView } from 'react-intersection-observer'
 import { motion,AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
@@ -81,6 +80,7 @@ const Content = styled.article`
 display : flex;
 flex-direction : column;
 padding-bottom : 124px;
+width: 100%;
 `;
 const Side = styled.div`
 display : flex;
@@ -128,3 +128,27 @@ const circleVariants = {
     hidden : {x : 1000},
     visible : {x : 0}
 }
+
+const Paragraph = styled.div`
+    max-width: 448px;
+    //styleName: body;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: left;
+
+`;
+const Header1 = styled.div`
+  //styleName: H3;
+font-family: Lato;
+font-size: 32px;
+font-style: normal;
+font-weight: 900;
+line-height: 48px;
+letter-spacing: 0px;
+text-align: left;
+
+`;

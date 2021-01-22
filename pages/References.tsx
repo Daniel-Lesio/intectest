@@ -53,7 +53,7 @@ const References = ({references}) => {
             <div style={{height : '32px'}}></div>
             
                 <div style={{display:'flex',justifyContent:'center',alignItems: 'center',paddingBottom : '96px' ,paddingTop : '32px'}}>
-                <Button value="MORE" color="green" arrow/>
+                <Button value="MORE" to='ss' color="green" arrow/>
                 </div>
         </Layout>
     );

@@ -184,7 +184,7 @@ const ServicesComp = () => {
             We can be your General Contractor, we can make project development or operations & maintenance. We can even do whole EPC – this is your call!</p>
             <div style={{height : 24}}></div>
             
-              <Button value='MORE' arrow />               
+              <Button value='MORE' to='/Services' arrow />               
           </div>
       </div>  
     </section>

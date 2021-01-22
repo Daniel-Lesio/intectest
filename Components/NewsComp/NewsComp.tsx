@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import styled from 'styled-components'
 import {  motion } from 'framer-motion'
 import Image from 'next/image'
+import Button from '../../Layout/Button'
+
 const NewsComp = ({data}) => {
     const [slicedData] = useState(data);
     const [posx, setposx] = useState(-480)
@@ -100,7 +102,13 @@ const NewsComp = ({data}) => {
                 </CarouselRelative>
             </CarouselWrapper>
                 </div>
+                <div  style={{ display :'flex',justifyContent:'center',paddingTop :0,paddingBottom :100}}>
+                <div style={{ width : '100%', maxWidth : '148px' }}>
 
+                <Button  value='MORE' arrow to='/News'/>               
+                </div>
+
+                </div>
         </section>
 
     );

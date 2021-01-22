@@ -134,11 +134,17 @@ const Mapa : React.FunctionComponent<mapaProps> = ({bg}) => {
     </AnimatePresence>
         
         
+        <DivComp
+
+animate={{x : inView ? 10 : 0 , y : inView ? -36  : 0}}
+               initial={{ x: 0 , y : 0 }}       
+        >
         <Img
         onClick={()=> setActive('poland') } 
-        animate={{x : inView ? 10 : 0 , y : inView ? -36  : 0}}
-        initial={{ x: 0 , y : 0 }}
         src="/assets/countries/poland.png" alt="Polska"/>
+        
+        </DivComp>
+        
         <Img 
         onClick={()=> setActive('arabia') }
         animate={{x : inView ? 94 : 0 , y : inView ? 70  : 0}}
@@ -201,12 +207,18 @@ const MapaSection = styled.div`
    }
 `;
 
+const DivComp = styled(motion.div)`
+background: red;
+display: flex;
+margin: 0px;
+padding: 0px;
+`
 const Img = styled(motion.img)`
     height: 32px;
     width: 32px;
     position: absolute;
     cursor: pointer;
-
+    
 &:hover{
     transform: scale(1.2);
   }

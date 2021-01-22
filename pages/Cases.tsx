@@ -21,6 +21,7 @@ const Cases = () => {
             name : 'Çeltikçi',
             imgUrl : Case1,
             employer : 'Bereket Enerji',
+            capacity : '2.5 MW',
             location  : 'Denizli / Turkey',
             date : '12 December 2017'            
         },
@@ -56,7 +57,7 @@ const Cases = () => {
 
     return (
         <Layout>
-            <div className='newspage-header' >
+            <PageHeader>
                 <Image
                 src='/assets/news.svg'
                 layout='fill'
@@ -67,10 +68,10 @@ const Cases = () => {
                 <Paragraph style={{textAlign:'center'}}>INTEC delivers projects on-time and according to quality standards, providing professional and sustainable energy solutions without compromise. Our proven track record of reliable projects and achievements spurs our growth as a trusted industry partners. Innovative technology and data insights are integrated in all high-quality solutions we develop and implement.</Paragraph>
                 <div style={{height : '16px'}}></div>
                 
-                <Paragraph style={{textAlign:'center',fontWeight: 500}}>Please see selected case study of our projects:</Paragraph>
+                <Paragraph style={{textAlign:'center',fontWeight: 900 , textTransform : 'uppercase'}}>Please see selected case study of our projects:</Paragraph>
         </Cont>
         
-            </div>
+            </PageHeader>
             <CasesList>
             <div className="container">
                 {
@@ -93,11 +94,29 @@ const CasesList = styled.div`
 `;
 
 const Cont = styled.div`
-           text-align : center;
+        text-align : center;
         margin-left : auto;
         margin-right : auto;
         position : relative;
         max-width : 789px;
         width : 100%;
  
+`;
+
+const PageHeader = styled.div`
+  min-height: 459px;
+    background-size: cover;
+    margin-top : 150px;
+    padding-top: 56px;
+    color: white;
+    position: relative;
+    width:  100%;
+    background: #EB7700;
+    z-index: -1;
+    img{
+        z-index: -1;
+    }
+    h1{
+      z-index: 1;
+    }
 `;
