@@ -1,37 +1,38 @@
-import React, {useState} from 'react';
-import styled from 'styled-components'
-import {  motion } from 'framer-motion'
+import {useState} from 'react'
 import Image from 'next/image'
+import SwiperCore, {Navigation,Pagination} from 'swiper'
+import { Swiper, SwiperSlide  } from 'swiper/react';
+import styled from 'styled-components';
+import {motion} from 'framer-motion'
+SwiperCore.use([Navigation,Pagination])
 import Button from '../../Layout/Button'
 
-const NewsComp = ({data}) => {
-    const [slicedData] = useState(data);
-    const [posx, setposx] = useState(-480)
+
+
+export interface SwipeNewsProps {
+    data : Article[]
+}
+ interface Article   {
+    id? : number,
+    url? : string,
+    excerpt? : string,
+    title? : string,
+    date? : string
+ } 
+ 
+const SwipeNews: React.FunctionComponent<SwipeNewsProps> = ({data}) => {
     const [hoverNext,sethoverNext] = useState(false)
     const [hoverPrev,sethoverPrev] = useState(false)
-    const slide=(msg)=>{
-        if(posx >= 0 && msg === "next" ){
-            return null
-        }
-        if(msg === 'prev' ){
-            setposx(posx=>posx-480)
-
-        }
-        else{
-            setposx(posx=>posx+480)
-            console.log("next")
-
-        }
+    
+    const slide = (direction) =>{
+        console.log('direction : ',direction)
     }
-    
-    
-    return (
-        <section id="news" >
-            <div className="container">
+    return ( 
+        <div className="container" style={{}}>
             <div className="news-header">
-            <h1 style={{fontWeight : 900, fontSize : '48px' ,textTransform : 'uppercase'}}>News</h1>
+            <h1 className='prev' style={{fontWeight : 900, fontSize : '48px' ,textTransform : 'uppercase'}}>News</h1>
                     <div className="arrows">
-                        <div onClick={()=>slide('next')} onMouseEnter={() => sethoverNext(true)} onMouseLeave={() => sethoverNext(false)} className="arrow-left arrow">
+                        <div   onMouseEnter={() => sethoverNext(true)} onMouseLeave={() => sethoverNext(false)} className="arrow-left next arrow">
                         {
                             !hoverNext && (
                                 <svg width="19" height="16" fill="none">
@@ -47,7 +48,7 @@ const NewsComp = ({data}) => {
                             )
                         }  
                         </div>
-                        <div onClick={()=>slide('prev')} onMouseEnter={() => sethoverPrev(true)} onMouseLeave={() => sethoverPrev(false)} className="arrow-right arrow">
+                        <div  onMouseEnter={() => sethoverPrev(true)} onMouseLeave={() => sethoverPrev(false)} className="arrow-right prev arrow">
                             {
                                 hoverPrev && (
                                 <svg style={{transform : 'rotate(180deg)'}} width="29" height="16" viewBox="0 0 29 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,12 +66,22 @@ const NewsComp = ({data}) => {
                         </div>
                     </div>
             </div>
-            <CarouselWrapper>
-                <CarouselRelative drag="x"
-                animate={{ x: posx }}
-                transition={{ duration: 0.5 }}
-                >
-                {data.map(d=>(
+        <Swiper           
+        loop={true}
+        navigation={{
+            nextEl : '.next',
+            prevEl : '.prev'
+        }}
+
+        autoplay={true}
+        spaceBetween={50}
+        slidesPerView={3}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log('swiper :' ,swiper)}
+        style={{width : '100vw'}}
+    >
+            {data && data.map(d=>(
+                <SwiperSlide key={d.id}>
                     <NewsCard key={d.id} className='news-hover'>
                         <Img
                          whileHover={{
@@ -78,13 +89,14 @@ const NewsComp = ({data}) => {
                             transition: { duration: 1 },
                           }}
                         >
-                        <Image
-                            src={d.url}
-                            layout='fill'
-                            /> 
+                            <Image src={d.url} layout='fill'/> 
                         </Img>
-                        <NewsTitle>{d.title}</NewsTitle>
-                        <NewsContent>Floating solar power plants are more advantageous than ground-mounted projects, here are some of them.</NewsContent>
+                        <NewsTitle>
+                            {d.title}
+                        </NewsTitle>
+                        <NewsContent>
+                            Floating solar power plants are more advantageous than ground-mounted projects, here are some of them.
+                        </NewsContent>
                         <div className="article-footer">
    <div className="date" style={{color : '#959595!important'}}>
      {d.date}
@@ -98,76 +110,76 @@ const NewsComp = ({data}) => {
    </div>
  </div>
                     </NewsCard>
-                ))}
-                </CarouselRelative>
-            </CarouselWrapper>
-                </div>
-                <div  style={{ display :'flex',justifyContent:'center',paddingTop :0,paddingBottom :100}}>
-                <div style={{ width : '100%', maxWidth : '148px' }}>
+                </SwiperSlide>
+            ))}
+            
+        </Swiper>
+        <div  style={{ display :'flex',justifyContent:'center',paddingTop :0,paddingBottom :100}}>
+                <div style={{ width : '100%', maxWidth : '148px' , paddingTop : '128px' }}>
 
                 <Button  value='MORE' arrow to='/News'/>               
                 </div>
 
                 </div>
-        </section>
+        </div>
 
     );
 }
+ 
+export default SwipeNews;
 
-export default NewsComp;
- const CarouselWrapper = styled.section`
-     padding-bottom: 128px;
-     width: 200vw;
-     display: flex;
-     height : 546px;
-     margin-bottom : 00px;
-     position : relative;    
-     overflow-x : hidden;
-      
- `
- const NewsCard = styled.article`
+
+const Wrapper = styled.div`
+    height: 500px;
+
+`;
+const Card = styled.div`
+  border: #ddd solid 3px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+    
+`;
+const Arrows = styled.div`
+  background : red;
+`;
+const Arrow = styled.div`
+  background : red;
+`;
+
+const NewsCard = styled.article`
     height : 448px;
     margin-right : 32px!important;
     width : 448px!important;
     
 
  `
- const CarouselRelative = styled(motion.div)`
-    position : absolute;
-    left : 0px;
-    top : 0px;
-    width  :auto;
-    height : 100%;
-    display : flex;
-    justify-content : flex-start;
-    
- `
- const Img = styled(motion.div)`
-  
-    position : relative;
-    height : 296px;
-    width : 100%;
-    object-fit : cover;
-    border-radius: 40px 40px 40px 0px;
-    pointer-events : none;
-    overflow : hidden;
-    
-`
-const NewsTitle = styled.h4`
-            font-size: 20px;
-            font-weight: 900;
-            line-height: 24px;
-            letter-spacing: 0px;
-            text-align: left;
-            margin-top: 22px;
-            margin-bottom: 16px;
+ const NewsTitle = styled.h4`
+ font-size: 20px;
+ font-weight: 900;
+ line-height: 24px;
+ letter-spacing: 0px;
+ text-align: left;
+ margin-top: 22px;
+ margin-bottom: 16px;
 `
 const NewsContent = styled.p`
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0px;
-    text-align: left;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: left;
 `
 
 
+const Img = styled(motion.div)`
+  
+position : relative;
+height : 296px;
+width : 100%;
+object-fit : cover;
+border-radius: 40px 40px 40px 0px;
+pointer-events : none;
+overflow : hidden;
+
+`

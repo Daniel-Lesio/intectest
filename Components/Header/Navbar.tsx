@@ -1,15 +1,14 @@
-import {useEffect} from 'react' 
+import {useEffect,useState} from 'react' 
 import Link from 'next/link'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
 import Image from 'next/image'
 import {useRouter} from 'next/router'
-import {useRecoilValue} from 'recoil'
-import {activeLink} from '../../atoms/atoms'
+
 
 
 const Navbar = ({inview}) => {
-    const Active = useRecoilValue(activeLink)
+    const [Active,setActive] = useState('Home')
     const router = useRouter()
     useEffect(() => {
         console.log('Active : ',Active)

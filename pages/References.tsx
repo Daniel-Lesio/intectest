@@ -9,15 +9,11 @@ import Reference from '../Components/Reference/Reference'
 import Button from '../Layout/Button'
 import Image from 'next/image'
 import Layout from '../Layout/Layout';
-import { activeLink } from '../atoms/atoms'
-import { useSetRecoilState } from 'recoil'
 
 const References = ({references}) => {
-    const setActiveLink =useSetRecoilState(activeLink)
     
     useEffect(() => {
         window.scrollTo(0, 0);
-        setActiveLink("References")    
     },[] );
     return (
         <Layout>

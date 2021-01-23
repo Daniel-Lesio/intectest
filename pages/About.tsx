@@ -4,28 +4,16 @@ import { Header1, Paragraph  } from "../styledComponents/styledComponents";
 import Mapa from '../Components/Mapa/Mapa'
 import {motion} from 'framer-motion'
 import NumbersGrey from '../Components/NumbersGrey/NumbersGrey'
+import SwipePartners from '../Components/SwipePartners/SwipePartners'
 import Image from 'next/image'
 import Layout from '../Layout/Layout';
-import { activeLink } from '../atoms/atoms'
-import { useSetRecoilState } from 'recoil'
 import {useInView} from 'react-intersection-observer'
 import ButtonWhite from '../Layout/ButtonWhite'
 const About = () => {
     const [posx, setposx] = useState(-480)
    
     const { ref, inView }  = useInView()
-    const setActiveLink =useSetRecoilState(activeLink)
-    useEffect(() => {
-        // window.scrollTo(0, 0);
-        setActiveLink("About")
-           
-    },[] );
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setposx(posx + 100)
-        }, 1000);
-        return () => clearInterval(interval);
-      }, []);
+    
     return (
         <Layout>
                 <PageHeader>
@@ -122,41 +110,7 @@ const About = () => {
                 </div>
             <NumbersGrey/>
             <Mapa bg={true} />
-            {/* <MapaComp>
-                <img src='/assets/map.png' alt=""/>    
-            </MapaComp> */}
-            <Partners className='container'>
-                <h1 style={{marginTop : 100,marginBottom : 56,fontFamily : 'lato',fontSize :'32px'}}>PARTNERS</h1>
-                <Carousel drag="x"
-                animate={{x:posx}}
-                >
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners02.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners03.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners04.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners05.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners06.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners02.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners03.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners04.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners05.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners06.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners02.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners03.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners04.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners05.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners06.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners01.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners02.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners03.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners04.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners05.png' alt=""/>    
-                <img src='/assets/about/logo/l_partners06.png' alt=""/>    
-                
-                </Carousel>    
-            </Partners>          
+            <SwipePartners/>           
         </Layout>
     );
 }

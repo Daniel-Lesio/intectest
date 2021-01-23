@@ -8,11 +8,8 @@ const Case4 = '/assets/cases/Case_Study_4.jpg';
 import CaseBox from "../Components/CaseBox/CaseBox";
 import Layout from '../Layout/Layout';
 import Image from 'next/image'
-import { activeLink } from '../atoms/atoms'
-import { useSetRecoilState } from 'recoil'
 
 const Cases = () => {
-    const setActiveLink =useSetRecoilState(activeLink)
 
     const [cases] = useState(
         [
@@ -52,7 +49,6 @@ const Cases = () => {
     ])
     useEffect(() => {
         window.scrollTo(0, 0);
-        setActiveLink("Cases")    
     },[] );
 
     return (

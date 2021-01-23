@@ -10,21 +10,19 @@ import CasesComp from '../Components/CasesComp/CasesComp'
 import ServicesComp from '../Components/ServicesComp/ServicesComp'
 import Certificates from '../Components/Certificates/Certificates'
 import TestimonialsComp from '../Components/TestimonialsComp/TestimonialsComp'
-import { activeLink } from '../atoms/atoms'
-import { useSetRecoilState } from 'recoil'
+import SwipeNews from '../Components/SwipeNews/SwipeNews'
 
 export default function Home({HeroData,posts,testimonials}) {
-  const setActiveLink = useSetRecoilState(activeLink)
 
   useEffect(()=>{
     window.scrollTo(0,0)
-    setActiveLink("Home")
   },[])
   return (
     <Layout className=''>
       <Hero heroData={HeroData} />
       <Numbers/>
-      <NewsComp data={posts}/>
+      <SwipeNews data={posts}/>
+      {/* <NewsComp data={posts}/> */}
       <AboutComp/>
       <CasesComp/>
       <ServicesComp/>

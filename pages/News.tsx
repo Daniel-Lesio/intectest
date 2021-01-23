@@ -5,16 +5,12 @@ import NewsArticle from '../Components/NewsArticle/NewsArticle'
 import Button from '../Components/Button/Button.jsx'
 import Image from 'next/image'
 import Layout from '../Layout/Layout'
-import { activeLink } from '../atoms/atoms'
-import { useSetRecoilState } from 'recoil'
-import Link from 'next/link'
-const Home = ({news}) => {
-  const setActiveLink =useSetRecoilState(activeLink)
 
+const Home = ({news}) => {
+  
   // const [news] = useState(newsData) 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setActiveLink("News")    
 },[] );
 return (
       <Layout>

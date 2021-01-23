@@ -7,14 +7,14 @@ import Notify from '../Components/Notify/Notify'
 import {RecoilRoot} from 'recoil'
 const Layout: React.FunctionComponent<LayoutProps> = ({children}) => {
     return ( 
-        <>
+        <div style={{overflowX : 'hidden'}}>
             <Header/>
             {children}
             <SocialsComp/>
             <ContactComp/>
             <FooterComp/>
             
-        </>
+        </div>
      );
 }
  

@@ -1,12 +1,12 @@
 import '../styles/index.scss'
-import {RecoilRoot} from 'recoil' 
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
 
 
 function MyApp({ Component, pageProps }) {
   return (
-    <RecoilRoot>
       <Component {...pageProps} />
-    </RecoilRoot>
+    
   )
 }
 

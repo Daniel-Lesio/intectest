@@ -6,16 +6,9 @@ import WorkFilter from "../Components/WorkFilter/WorkFilter";
 import { GetStaticProps } from 'next'
 import ButtonOrange from '../Layout/ButtonOrange'
 import Layout from '../Layout/Layout';
-import { activeLink } from '../atoms/atoms'
-import { useSetRecoilState } from 'recoil'
 
 const Career = ({positions}) => {
-    const setActiveLink =useSetRecoilState(activeLink)
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        setActiveLink("Career")    
-    },[] );
     return (
         
         <Layout>

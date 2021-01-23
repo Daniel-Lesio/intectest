@@ -4,16 +4,13 @@ import Button from "../Layout/Button";
 import Layout from '../Layout/Layout';
 const aboutImg  = '../assets/about.png'
 const map = '../assets/map.jpg'
-import { activeLink } from '../atoms/atoms'
-import { useSetRecoilState } from 'recoil'
 
 const Contact = () => {
-    const setActiveLink =useSetRecoilState(activeLink)
 
     useEffect(() => {
-        setActiveLink('Contact')
         window.scrollTo(0, 0); 
     },[] );
+
     return (
         <Layout>
             <PageHeader style={{background : `url(${aboutImg})`}}>

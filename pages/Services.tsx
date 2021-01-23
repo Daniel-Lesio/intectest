@@ -8,13 +8,11 @@ const LT = '/assets/services/ico/epc.svg'
 const LB = '/assets/services/ico/operation.svg'
 import Layout from '../Layout/Layout'
 import Box from "../Components/ServiceBox/Box";
-import { activeLink } from '../atoms/atoms'
-import { useSetRecoilState } from 'recoil'
+
 import Button from '../Layout/Button'
 
 
 const Services = () => {
-    const setActiveLink =useSetRecoilState(activeLink)
 
     const [ boxes ] = useState(
         [
@@ -47,7 +45,6 @@ const Services = () => {
     
     useEffect(() => {
         window.scrollTo(0, 0);
-        setActiveLink("Services")
     },[] );
     return (
         <Layout>
