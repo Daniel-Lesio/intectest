@@ -110,7 +110,8 @@ const About = () => {
                 </div>
             <NumbersGrey/>
             <Mapa bg={true} />
-            <SwipePartners/>           
+            <SwipePartners/> 
+            <div style={{height : 80}}></div>          
         </Layout>
     );
 }
