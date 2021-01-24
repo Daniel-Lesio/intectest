@@ -109,6 +109,6 @@ const Buttons = styled.div`
   height:  200px;
   z-index: 3;
   opacity:  1;
-  left: 0;
-  bottom: 0;
+  left: 0px;
+  bottom: 0px;
 `;
