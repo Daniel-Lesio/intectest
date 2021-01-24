@@ -119,6 +119,8 @@ export default About;
 
 
 const PageHeader = styled.div`
+
+
     min-height :   560px;
     background : #EB7700; 
     margin-top : 135px;
