@@ -4,7 +4,8 @@ import { useEffect } from 'react'
 import Layout from '../Layout/Layout'
 import Hero from '../Components/Hero/Hero'
 import Numbers from '../Components/Numbers/Numbers'
-import NewsComp from '../Components/NewsComp/NewsComp'
+// import NewsComp from '../Components/NewsComp/NewsComp'
+import SwipeCases from '../Components/SwipeCases/SwipeCases'
 import AboutComp from '../Components/AboutComp/AboutComp'
 import CasesComp from '../Components/CasesComp/CasesComp'
 import ServicesComp from '../Components/ServicesComp/ServicesComp'
@@ -15,16 +16,16 @@ import SwipeNews from '../Components/SwipeNews/SwipeNews'
 export default function Home({HeroData,posts,testimonials}) {
 
   useEffect(()=>{
-    window.scrollTo(0,0)
+    // window.scrollTo(0,0)
   },[])
   return (
     <Layout className=''>
       <Hero heroData={HeroData} />
       <Numbers/>
       <SwipeNews data={posts}/>
-      {/* <NewsComp data={posts}/> */}
       <AboutComp/>
-      <CasesComp/>
+      {/* <CasesComp/> */}
+      <SwipeCases/>
       <ServicesComp/>
       <TestimonialsComp data={testimonials}/>
       <Certificates/>

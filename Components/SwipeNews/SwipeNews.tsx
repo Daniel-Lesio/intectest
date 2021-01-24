@@ -2,9 +2,9 @@ import {useState} from 'react'
 import Image from 'next/image'
 import SwiperCore, {Navigation,Pagination} from 'swiper'
 import { Swiper, SwiperSlide  } from 'swiper/react';
+SwiperCore.use([Navigation,Pagination])
 import styled from 'styled-components';
 import {motion} from 'framer-motion'
-SwiperCore.use([Navigation,Pagination])
 import Button from '../../Layout/Button'
 
 
