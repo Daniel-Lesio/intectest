@@ -48,8 +48,8 @@ const Test = () => {
                     </Card>
                 </SwiperSlide>
                 <div className=''  style={{display : 'flex',justifyContent:'space-between',alignItems:'center',lineHeight : 70,background : "violet",padding : 20}}>
-                    <div className='prev' style={{padding : 10,width:100,height:100,background:'purple'}} className="prev">Prev</div>
-                    <div className='next' style={{padding : 10,width:100,height:100,background:'purple'}} className="next">Next</div>
+                    <div className='prev' style={{padding : 10,width:100,height:100,background:'purple'}} >Prev</div>
+                    <div className='next' style={{padding : 10,width:100,height:100,background:'purple'}} >Next</div>
                 </div>
             </Swiper>
             <TestCarousel/>
