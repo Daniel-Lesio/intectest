@@ -4,7 +4,9 @@ import Image from 'next/image'
 import styled from 'styled-components';
 import SwiperCore, {Autoplay,Navigation,Pagination,EffectFade,EffectFlip,EffectCube} from 'swiper'
 import { Swiper, SwiperSlide  } from 'swiper/react';
-import {motion} from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
+import { useInView } from 'react-intersection-observer';
+
 SwiperCore.use([Navigation,Pagination,EffectFade,EffectCube,EffectFlip,Autoplay])
 
 import {cities} from './Cities'
@@ -15,16 +17,29 @@ export interface SwipeCasesProps {
  
 const SwipeCases: React.FunctionComponent<SwipeCasesProps> = () => {
     const [ caseActive , setcaseActive] =  useState(0)
+    const {ref,inView} = useInView({
+        threshold : 0
+      })
 
 
     return ( 
         <Cases>
             <div className="container">
-            <CasesText>
-            <h1>CASE STUDY</h1>
-            <p>NTEC delivers projects on-time and according to quality standards, providing professional and sustainable energy solutions without compromise.</p>
-      
-            </CasesText>
+            <AnimatePresence>
+             { 3>2 && (
+                    <CasesText ref={ref}
+                    variants={parentVariants}
+                    animate='visible'
+                    initial='hidden'
+                    exit='hidden'
+                    >
+                        <h1>CASE STUDY</h1>
+                        <p>NTEC delivers projects on-time and according to quality standards, providing professional and sustainable energy solutions without compromise.</p>      
+                    </CasesText>
+             )
+                 
+             }
+            </AnimatePresence>
             </div>
             <Swiper
             id=''
@@ -123,22 +138,45 @@ const Buttons = styled.div`
 `;
 const CasesText = styled(motion.div)`
     position: absolute;
-    
+    transform: translateY(10px);
+    z-index: 4;
     max-width: 300px;
-    z-index: 99;
     color : white;
     text-align :left;
-    z-index: 90;
-            width: 100%;
+    width: 100%;
             max-width: 375px;
             color: white;
             h1{
                 text-align: left;
                 margin-bottom: 16px;
             }
+
+
+
     
     p{
         text-align :left;
         line-height: 1.4rem;
     }
 `;
+
+const parentVariants = {
+    hidden : {
+      opacity : 0,
+      
+    },
+    visible:{
+      opacity : 1,
+      
+   
+    }
+  }
+  const childrenVariables = {
+    hidden : {
+      opacity : 0,
+    },
+    visible:{   
+      opacity : 1,
+      
+    }
+  }

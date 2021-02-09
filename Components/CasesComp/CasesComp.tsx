@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import Link from 'next/link'
-import {motion ,useAnimation } from 'framer-motion'
+import {AnimatePresence, motion ,useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
 
 import Image from 'next/image'
@@ -55,14 +55,20 @@ const Cases = () => {
                 <Image src='/assets/cases/Case_Study_2@2x.jpg' layout='fill'/>
             </motion.div>
     <div className="container case-container">
-        <motion.div ref={ref}  className="case-text"
-        variants={containerVariants}
-        initial='hidden'
-        animate='visible'
-        >
-          <h1>CASE STUDY</h1>
-          <p>NTEC delivers projects on-time and according to quality standards, providing professional and sustainable energy solutions without compromise.</p>
-        </motion.div>
+      <AnimatePresence>
+        { inView && (
+          <motion.div ref={ref}  className="case-text"
+          variants={containerVariants}
+          initial='hidden'
+          animate='visible'
+          >
+            <h1>CASE STUDY</h1>
+            <p>NTEC delivers projects on-time and according to quality standards, providing professional and sustainable energy solutions without compromise.</p>
+          </motion.div>
+        )
+          
+        }
+          </AnimatePresence>
         <div className="case-btns">
             {cities.map(city=>(
                 <div key={city.id} className={`case-btn ${ city.id === caseActive ? 'active'  :''  }`}  onClick={()=>changeActive(city.id)} >

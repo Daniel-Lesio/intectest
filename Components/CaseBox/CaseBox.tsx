@@ -61,10 +61,10 @@ const CaseBox = ( props ) => {
                 <Left>
                     <Header1 style={{fontSize : '26px',fontWeight : 700,lineHeight : '32px'}} >{props.case.name}</Header1>
                     <div style={{height : '12px'}} ></div>
-                    <div style={{ textTransform : 'uppercase',lineHeight : '28px'}}><span style={{marginRight : '8px' ,fontWeight : 900 ,}}>Employer :</span>  { props.case.employer } </div>                    
-                    <div style={{ textTransform : 'uppercase',lineHeight : '28px'}}><span style={{marginRight : '8px' ,fontWeight : 900}}>CAPACITY :</span>  { props.case.capacity } </div>                    
-                    <div style={{ textTransform : 'uppercase',lineHeight : '28px'}}><span style={{marginRight : '8px' ,fontWeight : 900}}>Location :</span>  { props.case.location } </div>                    
-                    <div style={{ textTransform : 'uppercase',lineHeight : '28px'}}><span style={{marginRight : '8px' ,fontWeight : 900}}>Date :</span>  { props.case.date } </div>                    
+                    <div style={{ lineHeight : '28px'}}><span style={{textTransform: 'uppercase', marginRight : '8px' ,fontWeight : 900 ,}}>Employer :</span>  { props.case.employer } </div>                    
+                    <div style={{ lineHeight : '28px'}}><span style={{textTransform: 'uppercase', marginRight : '8px' ,fontWeight : 900}}>CAPACITY :</span>  { props.case.capacity } </div>                    
+                    <div style={{ lineHeight : '28px'}}><span style={{textTransform: 'uppercase', marginRight : '8px' ,fontWeight : 900}}>Location :</span>  { props.case.location } </div>                    
+                    <div style={{ lineHeight : '28px'}}><span style={{textTransform: 'uppercase', marginRight : '8px' ,fontWeight : 900}}>Date :</span>  { props.case.date } </div>                    
           <Link href='Case'>
           <More>
      <p style={{marginRight : '8px'}}>More</p>

@@ -27,6 +27,7 @@ const Cases = () => {
             name : 'Çeltikçi',
             imgUrl : Case2,
             employer : 'Bereket Enerji',
+            capacity : '2.5 MW',
             location  : 'Denizli / Turkey',
             date : '12 December 2017'            
         },
@@ -35,6 +36,7 @@ const Cases = () => {
             name : 'Çeltikçi',
             imgUrl : Case3,
             employer : 'Bereket Enerji',
+            capacity : '2.5 MW',
             location  : 'Denizli / Turkey',
             date : '12 December 2017'            
         },
@@ -43,6 +45,7 @@ const Cases = () => {
             name : 'Çeltikçi',
             imgUrl : Case4,
             employer : 'Bereket Enerji',
+            capacity : '2.5 MW',
             location  : 'Denizli / Turkey',
             date : '12 December 2017'            
         },
