@@ -190,6 +190,9 @@ const PositionsAccordion = styled(motion.div)`
     flex-direction: column;
     background:white ;
     overflow-x: hidden;
+    height :auto;
+    overflow-y: hidden;
+    
 `;
 const AccPos = styled(motion.div)`
 transform-origin: 0%;
@@ -199,10 +202,12 @@ padding-top: 15px;
     line-height:  40px;
     padding-left: 40px;
     background: white;
-
+    
     &:hover{
+        border-top: 1px solid #CCE6D9;
         color :#008440;
         font-weight: 900;
+        
     }
 `;
 const secondVariants = {
