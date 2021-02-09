@@ -61,12 +61,15 @@
             align-items: center;
             justify-content: center;
             height: 52px;
+            box-sizing: border-box;
             cursor: pointer;
-            transition: all ease-in-out .3s;
             &:hover{
                 cursor: pointer;
-                border: 0px solid rgba($orange,0.0);
-                #submit{
+                border-right: 1px solid rgba($orange,1);
+                border-top: 1px solid rgba($orange,1);
+                border-bottom: 1px solid rgba($orange,1);
+                border-left: 0px solid rgba($orange,1);
+            #submit{
                     background: white;
                     color:  $orange;
                 }
