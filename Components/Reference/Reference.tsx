@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion'
-import { Paragraph } from '../../styledComponents/styledComponents';
+// import { Paragraph } from '../../styledComponents/styledComponents';
 import SwiperCore, {Navigation,Pagination} from 'swiper'
 import { Swiper, SwiperSlide  } from 'swiper/react';
 SwiperCore.use([Navigation,Pagination])
@@ -94,6 +94,7 @@ const Reference = (props) => {
             </ReferenceImages>
   
             </Wrapper> */}
+            <div style={{height : 24}}></div>
             <Paragraph style={{fontSize:'16px',fontWeight :400 , width:'100%',maxWidth : '832px'}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing metus, blandit laoreet eget. Ullamcorper donec mi quis interdum molestie amet id sit pharetra. Id leo ac tempor feugiat vitae arcu platea. Gravida sed sed arcu, at. Ac risus semper sodales condimentum. Nibh non tristique ut volutpat. Consectetur proin ipsum elementum consequat. Ultrices lorem sit nisl.
             </Paragraph>
@@ -107,7 +108,7 @@ const ReferenceComp = styled.article`
     width : 100%;
     height : 530px;
     
-    border-top : 1px solid #ddd;
+    border-top : 1px solid #CCE6D9;;
     padding-top : 25px;
     z-index : 4;   
 `;
@@ -126,12 +127,12 @@ line-height : 20px;
 justify-content : space-between;
 align-items : center;
 text-transform : uppercase;
-overflow : hidden;
 `;
 
 
 
 const Arrow = styled.div`
+
 cursor: pointer;
 background : white;
 display : flex;
@@ -181,4 +182,14 @@ const Wrapper = styled.div`
     margin-bottom : 24px;    
     overflow: hidden;
 
+`;
+const Paragraph = styled.p`
+  //styleName: body;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: left;
 `;
