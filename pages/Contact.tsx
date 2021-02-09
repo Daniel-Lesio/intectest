@@ -14,13 +14,13 @@ const Contact = () => {
     return (
         <Layout>
             <PageHeader style={{background : `url(${aboutImg})`}}>
-                <h1>Contact</h1>
+                <h1 style={{textTransform : 'uppercase'}}>Contact Us</h1>
             </PageHeader>
             
             <div style={{height : 112}}></div>
             <FormSection className='container'>
                 <Adress>
-                    <p style={{color:'#008440',fontSize : '16px',lineHeight :'24px'}}>Address</p>
+                    <p style={{color:'#008440',fontSize : '16px',textTransform:'uppercase',lineHeight :'24px'}}>Adress</p>
             <div style={{height : 9}}></div>
                     <p>Aleja 29 Listopada 20 <br/>
                         31-401 Kraków<br/>
@@ -146,7 +146,6 @@ const FormSection = styled.div`
 const Adress = styled.div`
 display : flex;
 flex-direction : column;
-text-transform : uppercase;
 font-size : 20px;
 line-height :32px;  
 `;
