@@ -26,7 +26,7 @@ const Navbar = ({inview}) => {
         >
             <div className='container'>
                 <Nav>
-                <Link href="/Home">
+                <Link href="/">
                 <a>
                 <Image 
                 src='/assets/logo_INTEC_color.svg' alt=""
