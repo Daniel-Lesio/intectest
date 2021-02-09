@@ -49,7 +49,8 @@ const Career = ({positions}) => {
                 </div>
             </WorkingWithUs>
             <div className="container">
-                <Header1 style={{marginBottom : '32px'}}>CURRENT VACANCIES</Header1>
+            
+                <Header style={{marginBottom : '32px'}}>CURRENT VACANCIES</Header>
                 <WorkFilter positions={positions}/>
             </div>
         </Layout>
@@ -176,5 +177,4 @@ const path = require('path')
     text-align: left;
     margin-bottom : 8px;
     text-transform : uppercase;
-
   `;
