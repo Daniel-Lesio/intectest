@@ -53,8 +53,18 @@ Mauris luctus aliquet pharetra sapien non curabitur egestas magnis. Pulvinar sed
                     </Grid2>
             <div style={{height : '24px'}}></div>
             <UploadComp>
-                <input type="file" name="upload" id="upload"/>
+            <input name="Upload Saved Replay" type="file" 
+  accept="application/pdf,application/msword,
+  application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
             </UploadComp>
+            <div style={{height : 24}}></div>
+            <textarea className='textarea' placeholder='SEND MESSAGE' name="message" id="message" cols={30} rows={5}></textarea>
+            
+            <div style={{height : 24}}></div>
+            <div style={{ display : 'flex',justifyContent:  'center', alignItems : 'center' }}>
+                    <Button value='APPLY' to='/Contact' arrow /> 
+            </div>
+            <div style={{height : 96}}></div>
             </ContactForm>
 
             </Main>
@@ -184,11 +194,27 @@ const Grid2 = styled.div`
 width : 100%;
 line-height : 48px;
 display : grid;
-grid-template-columns : repeat(2,1fr)  ;
+grid-template-columns : repeat(1,1fr)  ;
+@media (min-width : 768px){
+    grid-template-columns : repeat(2,1fr)  ;
 
+}
 gap : 32px;
 color: #008440;
+input,textarea{
+    padding-left : 40px;
+    line-height : 48px;
+    border-radius : 50px;
+    outline : none;
+    border: 1px solid #008440;
+    color: #008440;
+    box-sizing: border-box;
+    border-radius: 32px;
+}
+input::placeholder , textarea::placeholder{
     
+    color: #CCE6D9;
+}
 `;
 const Header = styled.h1`
   font-family: Lato;
@@ -203,13 +229,44 @@ const UploadComp = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: red;
+
   input{
+    outline: none;
     width: 100%;
     max-width: 148px;
-    background : $orange;
+    background : #EB7700;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 50px;
+    text-align: center;
+    position: relative;
     &::-webkit-file-upload-button{
         visibility: hidden;
+    }
+    &::after{
+        content: 'upload';
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #EB7700;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: white;
+        border: solid 2px #EB7700;
+        transition: all ease-in-out .3s; 
+        cursor: pointer;
+        &:hover{
+            color: #EB7700!important;
+            background: white!important;
+        }
     }
   }
 `;

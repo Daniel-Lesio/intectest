@@ -4,7 +4,7 @@ import Button from "../Layout/Button";
 import Layout from '../Layout/Layout';
 const aboutImg  = '../assets/about.png'
 const map = '../assets/map.jpg'
-
+import Mapa2 from '../Components/Mapa/Mapa2'
 const Contact = () => {
 
     useEffect(() => {
@@ -115,7 +115,8 @@ const Contact = () => {
         </Office>
     </Offices>        
 
-        <img style={{width : '100%'}} src={map} alt=""/>    
+    <Mapa2 bg={true} />
+                
     </Layout>
     );
 }

@@ -168,13 +168,13 @@ const path = require('path')
 
   const Header = styled.h1`
     font-family: Lato;
-font-size: 32px;
-font-style: normal;
-font-weight: 900;
-line-height: 48px;
-letter-spacing: 0px;
-text-align: left;
-margin-bottom : 8px;
-text-transform : uppercase;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 48px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom : 8px;
+    text-transform : uppercase;
 
   `;
