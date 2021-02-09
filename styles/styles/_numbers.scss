@@ -31,8 +31,13 @@
     }
     .numbers-grid{
         display: flex;
-
-        justify-content: space-evenly;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media (min-width: 760px){
+            justify-content: space-evenly;
+            flex-direction: row;
+        }
         .numbers{
             text-align: center;
             display: flex;
@@ -41,17 +46,25 @@
             h2{
                 margin-bottom: 16px;
                 margin-bottom: 16px;
-         line-height:  36px;
+                line-height:  36px;
+
             }
         }
         .numbers-left{
+            @media (max-width: 760px){
+                margin-bottom: 20px;
+            }
             h2{
                 border-right: solid #fff 2px;
             }
         }
         .numbers-right{
+            @media (max-width: 760px){
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
             h2{
-
+                
                 border-left: solid #fff 2px;
             }
         }

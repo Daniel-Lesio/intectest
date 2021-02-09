@@ -37,9 +37,13 @@ const Mapa : React.FunctionComponent<mapaProps> = ({bg}) => {
     <AnimatePresence>
     {active === 'germany' && (
         <Info
-        animate={{x : 150  , y : -106 , opacity : 1 }}
+        
+        animate={{x : -160  , y : 56 , opacity : 1 }}
+        
         initial={{ x: 0 , y : 10, opacity : 0 }}
         exit={{ x: 0 , y : 10, opacity : 0 }}
+        style={{borderRadius : '16px 0px 16px 16px'}}
+
         >
         Germany 29 Listopada 20 <br/>
         31-401 Kraków <br/>
@@ -79,10 +83,12 @@ const Mapa : React.FunctionComponent<mapaProps> = ({bg}) => {
     <AnimatePresence>
     {active === 'france' && (
         <Info
-        animate={{x : 150  , y : -76 , opacity : 1 }}
+        animate={{x : -180  , y : 56 , opacity : 1 }}
         initial={{ x: 0 , y : 10, opacity : 0 }}
         exit={{ x: 0 , y : 10, opacity : 0 }}
+        style={{borderRadius : '16px 0px 16px 16px'}}
         >
+          
         France 29 Listopada 20 <br/>
         31-401 Kraków <br/>
         +48 533 315 569 <br/>
@@ -93,10 +99,12 @@ const Mapa : React.FunctionComponent<mapaProps> = ({bg}) => {
     <AnimatePresence>
     {active === 'nederland' && (
         <Info
-        animate={{x : 150  , y : -76 , opacity : 1 }}
+        animate={{x : -180  , y : 56 , opacity : 1 }}
         initial={{ x: 0 , y : 10, opacity : 0 }}
         exit={{ x: 0 , y : 10, opacity : 0 }}
-        >
+        style={{borderRadius : '16px 0px 16px 16px'}}
+
+      >
         Holland 29 Listopada 20 <br/>
         31-401 Kraków <br/>
         +48 533 315 569 <br/>
@@ -174,7 +182,6 @@ animate={{x : inView ? 10 : 0 , y : inView ? -36  : 0}}
         initial={{ x: 0 , y : 0 }}
         src="/assets/countries/germany.png" alt="germany"/>
         <Img 
-        
         onClick={()=> setActive('france') }
         animate={{x : inView ? -74 : 0 , y : inView ? -23  : 0}}
         initial={{ x: 0 , y : 0 }}
@@ -218,10 +225,13 @@ const Img = styled(motion.img)`
     width: 32px;
     position: absolute;
     cursor: pointer;
+    border: solid 3px #fff;
+    border-radius: 50%;
     
-&:hover{
-    transform: scale(1.2);
-  }
+   &:hover{
+     border: solid 3px #EB7700;
+     
+   }
 `;
 
 const Info = styled(motion.div)`

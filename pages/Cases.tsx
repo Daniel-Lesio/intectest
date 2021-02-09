@@ -84,7 +84,7 @@ const Cases = () => {
 
 export default Cases;
 const CasesList = styled.div`
-    margin-top : -148px;
+    margin-top : -108px;
     
 
 `;

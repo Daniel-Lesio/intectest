@@ -28,7 +28,8 @@ const Footer = styled.footer`
 const LinkHover = styled.p`
     transition : all ease-in-out .3s ;
     cursor : pointer;
+    color : #959595;
     &:hover{
-      color : orange
+      color : #EB7700;
     }
 `;

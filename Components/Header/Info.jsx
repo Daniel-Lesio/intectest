@@ -216,7 +216,7 @@ const LangBtn = styled.div`
 const InfoComp = styled(motion.div)`
     background: #F8F8F8;
     line-height : 40px;
-    display : none;
+    display : flex;
     @media (min-width: 768px) {
         display : flex;
     }
@@ -224,6 +224,9 @@ const InfoComp = styled(motion.div)`
 const Nav = styled.div`
     height : 100%;
     display :flex;
+    @media (min-width: 768px) {
+        display : flex;
+    }
     align-items : center;
     justify-content : flex-end;
 `
@@ -248,12 +251,13 @@ const  InfoLink = styled.span`
     }
 `
 const InfoLinks = styled.span`
-    display : flex;
+    display : none;
     justify-content : space-between;
     margin-right : 54px;
     @media (min-width: 640px) {
     }
     @media (min-width: 768px) {
+        display : flex;
     }
     @media (min-width: 1024px) {
     max-width : 1024px!important;

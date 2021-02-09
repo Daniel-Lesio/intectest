@@ -2,6 +2,10 @@ import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion'
 import { Paragraph } from '../../styledComponents/styledComponents';
+import SwiperCore, {Navigation,Pagination} from 'swiper'
+import { Swiper, SwiperSlide  } from 'swiper/react';
+SwiperCore.use([Navigation,Pagination])
+
 const Reference = (props) => {
     const [white  ,setWhite] = useState(false)   
     const[ images ,setImages] = useState([])
@@ -25,10 +29,10 @@ const Reference = (props) => {
     return (
         <ReferenceComp>
             <Descriptions white={white}>
-                <h3 style={{fontWeight : 900}}>Project name: <span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.name}</span></h3>
-                <h3 style={{fontWeight : 900}}>Place of project: <span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.place}</span></h3>
-                <h3 style={{fontWeight : 900}}>CAPACITY :<span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.capacity}</span></h3>
-                <h3 style={{fontWeight : 900}}>DATE OF COMPLETION: <span  style={{fontWeight:400 , textTransform  : 'capitalize',paddingLeft : '10px'}}>{props.obj.completion}</span></h3>
+                <h3 style={{ fontSize: 14,lineHeight : 24, fontWeight : 900}}>Project name: <span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.name}</span></h3>
+                <h3 style={{ fontSize: 14,lineHeight : 24, fontWeight : 900}}>Place of project: <span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.place}</span></h3>
+                <h3 style={{ fontSize: 14,lineHeight : 24, fontWeight : 900}}>CAPACITY :<span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.capacity}</span></h3>
+                <h3 style={{ fontSize: 14,lineHeight : 24, fontWeight : 900}}>DATE OF COMPLETION: <span  style={{fontWeight:400 , textTransform  : 'capitalize',paddingLeft : '10px'}}>{props.obj.completion}</span></h3>
                 <Arrow onClick={()=>slide()} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} >
                         {!hovered && (
                                     <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +47,38 @@ const Reference = (props) => {
                         )}  
                 </Arrow>
             </Descriptions>
-            <Wrapper>
+            <Swiper
+                    loop={true}
+                    navigation={{
+                        nextEl : '.next',
+                        prevEl : '.prev'
+                    }}
+            
+                    autoplay={true}
+                    spaceBetween={50}
+                    slidesPerView={3}
+                    style={{width : '100vw'}}
+            
+            >
+            {images && images.map((image,index)=>(
+                        <SwiperSlide
+                        key={index}
+                        style={{
+                            width: '448px',
+                            height:  '296px',
+                            overflow: 'hidden',
+                            borderRadius: '40px 40px 40px 0px',
+                            marginTop : 20,
+                            marginBottom : 30,
+                        }}
+                        >
+                            <img style={{objectFit : 'cover', position : 'absolute',width : '100%',height : '100%'}} src={image} alt=""/>
+
+                        </SwiperSlide>
+                ))}
+                
+            </Swiper>
+            {/* <Wrapper>
             <ReferenceImages drag='x' animate={{ x: posx }}
                 transition={{ duration: 0.5 }}  dragConstraints={{ left: 0, right: 300 }}
 >   
@@ -58,7 +93,7 @@ const Reference = (props) => {
   
             </ReferenceImages>
   
-            </Wrapper>
+            </Wrapper> */}
             <Paragraph style={{fontSize:'16px',fontWeight :400 , width:'100%',maxWidth : '832px'}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing metus, blandit laoreet eget. Ullamcorper donec mi quis interdum molestie amet id sit pharetra. Id leo ac tempor feugiat vitae arcu platea. Gravida sed sed arcu, at. Ac risus semper sodales condimentum. Nibh non tristique ut volutpat. Consectetur proin ipsum elementum consequat. Ultrices lorem sit nisl.
             </Paragraph>

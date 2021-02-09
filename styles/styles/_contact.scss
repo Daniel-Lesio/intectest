@@ -50,27 +50,48 @@
             }
         }
         .submit-btn{
+            outline: none;
             color: white;
             width: 134px;
             background: $orange;
-            border: solid 2px $orange;
+            border: solid 1px $orange;
             border-radius: 0px 50px 50px 0px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 52px;
+            cursor: pointer;
+            transition: all ease-in-out .3s;
+            &:hover{
+                cursor: pointer;
+                border: 0px solid rgba($orange,0.0);
+                #submit{
+                    background: white;
+                    color:  $orange;
+                }
+                svg{
+                    transform: translateY(-50%) translateX(6px);
+                    path{
+                        fill: $orange!important;
+                    }
+                }
+            }
             #submit{
+                cursor: pointer;
+                outline: none; 
                 text-transform: uppercase;
                 width: 134px;
                 background: $orange;
-                border: solid 2px $orange;
                 border-radius: 0px 50px 50px 0px;
                 position: relative;
                 display: flex;
                 color: white;
                 padding-left: 40px;
+                border: none;
             }
             svg{
+                transition: all ease-in-out .3s;
                 height: 8px;
                 width: 14px;
                 position: absolute;
@@ -125,6 +146,9 @@
 line-height: 24px;
             a{
                 color:  $orange;
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }
     }

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styled from 'styled-components';
 import SwiperCore, {Autoplay,Navigation,Pagination,EffectFade,EffectFlip,EffectCube} from 'swiper'
 import { Swiper, SwiperSlide  } from 'swiper/react';
+import {motion} from 'framer-motion'
 SwiperCore.use([Navigation,Pagination,EffectFade,EffectCube,EffectFlip,Autoplay])
 
 import {cities} from './Cities'
@@ -18,6 +19,13 @@ const SwipeCases: React.FunctionComponent<SwipeCasesProps> = () => {
 
     return ( 
         <Cases>
+            <div className="container">
+            <CasesText>
+            <h1>CASE STUDY</h1>
+            <p>NTEC delivers projects on-time and according to quality standards, providing professional and sustainable energy solutions without compromise.</p>
+      
+            </CasesText>
+            </div>
             <Swiper
             id=''
             effect="fade"
@@ -35,6 +43,7 @@ const SwipeCases: React.FunctionComponent<SwipeCasesProps> = () => {
                     style={{width : '100vw',height : '100%',position : 'absolute'}}
             
             >
+
                 <SwiperSlide>
                     <CaseCard>
                     <Image src='/assets/cases/Case_Study_1@2x.jpg' layout='fill'/>  
@@ -111,4 +120,25 @@ const Buttons = styled.div`
   opacity:  1;
   left: 0px;
   bottom: 0px;
+`;
+const CasesText = styled(motion.div)`
+    position: absolute;
+    
+    max-width: 300px;
+    z-index: 99;
+    color : white;
+    text-align :left;
+    z-index: 90;
+            width: 100%;
+            max-width: 375px;
+            color: white;
+            h1{
+                text-align: left;
+                margin-bottom: 16px;
+            }
+    
+    p{
+        text-align :left;
+        line-height: 1.4rem;
+    }
 `;

@@ -8,10 +8,16 @@ import {useRouter} from 'next/router'
 
 
 const Navbar = ({inview}) => {
-    const [Active,setActive] = useState('Home')
+    const [Active,setActive] = useState('About')
     const router = useRouter()
     useEffect(() => {
-        console.log('Active : ',Active)
+        if(router.pathname === '/'){
+            setActive("Home")
+        }
+        else{
+
+            setActive(router.pathname.substring(1))
+        }
     }, []);
     return (
         <NavbarComp 

@@ -60,13 +60,8 @@ const Cases = () => {
         initial='hidden'
         animate='visible'
         >
-          <h1
-          
-          
-          >CASE STUDY</h1>
-          <p
-          
-          >NTEC delivers projects on-time and according to quality standards, providing professional and sustainable energy solutions without compromise.</p>
+          <h1>CASE STUDY</h1>
+          <p>NTEC delivers projects on-time and according to quality standards, providing professional and sustainable energy solutions without compromise.</p>
         </motion.div>
         <div className="case-btns">
             {cities.map(city=>(

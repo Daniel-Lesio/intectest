@@ -24,5 +24,12 @@
         margin-right: auto;
         max-width: 168px;
         width: 100%;
+        img{
+            cursor: pointer;
+            transition: all ease-in-out .3s;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { Header1, Paragraph  } from "../styledComponents/styledComponents";
 import Mapa from '../Components/Mapa/Mapa'
@@ -38,7 +38,7 @@ const About = () => {
                 
                 </div>
             </PageHeader>
-            <div className="container" style={{paddingTop : '256px',paddingBottom : '256px'}}>
+            <div className="container" style={{paddingTop : '256px',paddingBottom : '112px'}}>
                     <Header1 style={{textAlign : 'center',marginTop:'96px',marginBottom : '56px'}}>OUR VALUES</Header1>
                     <AboutIcons ref={ref}>
                         <AboutIcon>

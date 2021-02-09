@@ -21,7 +21,6 @@ const Career = ({positions}) => {
                 <Paragraph style={{marginBottom:'16px', textAlign:'center',maxWidth:'700px',marginLeft:'auto',marginRight:'auto'}}>INTEC was founded on the dream of a world full of renewable energy. Now, we design environmentally-friendly energy solutions that excel in performance and sustainability while also providing top profits and output for our shareholders. As we grow in size and industry influence, we recognizes the critical value of teamwork, and priorities employee training and development in all departments.</Paragraph>
         <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
         <ButtonOrange  color='white' value='CHECK VACANCIES' arrow to='/Services'/>               
-        
         </div>
 
                     {/* <ButtonWhiteComp>
@@ -80,6 +79,7 @@ const Image = styled.div`
     position : absolute;
     width : 100%;
     height : 512px;
+    transform: translateY(70px);
     background : #2c2c2c;
     border-radius: 40px 40px 40px 0px;
     img{

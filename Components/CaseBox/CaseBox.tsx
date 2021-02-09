@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import { Header1 } from '../../styledComponents/styledComponents';
@@ -13,24 +14,31 @@ const CaseBox = ( props ) => {
             <Section>
                 <div className="container">
                 <Indicator>
+                <Link href='Case'>
                     <Ind>
                         <Circle>
                             <img src='/assets/ico/cases/doc-healthy.svg' alt=""/>
                         </Circle>
                         <h4 style={{ fontWeight : 900,textTransform : 'uppercase',fontSize : '7px', marginTop : '8px'}}>Documents</h4>
                     </Ind>
+                </Link>
+                <Link href='Case'>
                     <Ind>
                         <Circle>
                             <img src='/assets/ico/cases/bulldozer.svg' alt=""/>
                         </Circle>
                         <h4 style={{ fontWeight : 900,textTransform : 'uppercase',fontSize : '7px', marginTop : '8px'}}>SITE PREPARATION</h4>
                     </Ind>
+                </Link>
+                <Link href='Case'>
                     <Ind>
                         <Circle>
                             <img src='/assets/ico/cases/cable.svg' alt=""/>
                         </Circle>
                         <h4 style={{ fontWeight : 900,textTransform : 'uppercase',fontSize : '7px', marginTop : '8px'}}>CABLING & MODULE <br/> INSTALLATION</h4>
                     </Ind>
+                </Link>
+                <Link href='Case'>
                     <Ind>
                         <Circle>
                             <div className="overlay"></div>
@@ -38,6 +46,8 @@ const CaseBox = ( props ) => {
                         </Circle>
                         <h4 style={{ opacity : 0.7, fontWeight : 900,textTransform : 'uppercase',fontSize : '7px', marginTop : '8px'}}>OTHER WORKS</h4>
                     </Ind>
+                </Link>
+                <Link href='Case'>
                     <Ind>
                         <Circle>
                             <div className="overlay"></div>
@@ -45,6 +55,7 @@ const CaseBox = ( props ) => {
                         </Circle>
                         <h4 style={{ opacity : 0.7, fontWeight : 900,textTransform : 'uppercase',fontSize : '7px', marginTop : '8px'}}>POWER   CONNECTION</h4>
                     </Ind>
+                </Link>
                     
                 </Indicator>
                 <Left>
@@ -54,12 +65,14 @@ const CaseBox = ( props ) => {
                     <div style={{ textTransform : 'uppercase',lineHeight : '28px'}}><span style={{marginRight : '8px' ,fontWeight : 900}}>CAPACITY :</span>  { props.case.capacity } </div>                    
                     <div style={{ textTransform : 'uppercase',lineHeight : '28px'}}><span style={{marginRight : '8px' ,fontWeight : 900}}>Location :</span>  { props.case.location } </div>                    
                     <div style={{ textTransform : 'uppercase',lineHeight : '28px'}}><span style={{marginRight : '8px' ,fontWeight : 900}}>Date :</span>  { props.case.date } </div>                    
-                    <More>
+          <Link href='Case'>
+          <More>
      <p style={{marginRight : '8px'}}>More</p>
      <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
        <path fillRule="evenodd" clipRule="evenodd" d="M11.009 0.477212L14.4703 3.93403C14.6827 4.14615 14.6827 4.49008 14.4703 4.70221L11.009 8.15902C10.7966 8.37115 10.4523 8.37115 10.2399 8.15902C10.0275 7.94689 10.0275 7.60297 10.2399 7.39084L12.7726 4.8613L1.17346 4.8613C0.873082 4.8613 0.629578 4.61811 0.629578 4.31811C0.629578 4.01812 0.873083 3.77493 1.17346 3.77493L12.7726 3.77493L10.2399 1.24539C10.0275 1.03327 10.0275 0.689339 10.2399 0.477212C10.4523 0.265084 10.7966 0.265084 11.009 0.477212Z" fill="#EB7700"/>
      </svg>  
    </More>
+          </Link>
                 </Left>
                 <Right>
                     <img src={props.case.imgUrl} alt=""/>
@@ -128,7 +141,7 @@ const Ind = styled.div`
     text-align : center;
     color : green;
 `;
-const Circle = styled.div`
+const Circle = styled.a`
     border-radius :50%;
     width : 48px;
     height : 48px;
@@ -138,6 +151,9 @@ const Circle = styled.div`
     background : white;
     position: relative;
     cursor: pointer;
+    &:hover{
+        opacity:  .5;
+    }
     .overlay{
     cursor : not-allowed ;
     position : absolute;

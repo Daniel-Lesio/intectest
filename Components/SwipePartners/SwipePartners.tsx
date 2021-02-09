@@ -28,57 +28,57 @@ const SwipePartners: React.FunctionComponent<SwipePartnersProps> = () => {
             >
                 
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners01.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners02.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners03.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners04.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners05.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners06.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners07.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners08.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners09.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners10.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
                 <SwiperSlide>
-                    <LogoElem>
+                    <LogoElem href='#'>
                     <img src='/assets/about/logo/l_partners11.png' alt=""/>
                     </LogoElem>    
                 </SwiperSlide>
@@ -90,6 +90,7 @@ const SwipePartners: React.FunctionComponent<SwipePartnersProps> = () => {
 export default SwipePartners;
 
 
-const LogoElem = styled.div`
+const LogoElem = styled.a`
     height:  100px;
+    cursor: pointer;
 `;
