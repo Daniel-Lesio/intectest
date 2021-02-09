@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer'
 import { motion,AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Arrow from '../Arrow';
 const Box = ({order,box}) => {
     const [ref, inView] = useInView({threshold: 0,});
     const [odd,setOdd] = useState(false)
@@ -18,7 +19,8 @@ const Box = ({order,box}) => {
             {
                 !odd  && (
                     <Content>
-                    <Header1 style={{fontSize : '32px' , marginBottom : '16px'}}>{box.title}</Header1>
+                        <Arrow direction='left'/>
+                    <Header1 style={{textTransform : 'uppercase',fontSize : '32px' , marginBottom : '16px'}}>{box.title}</Header1>
                     <Paragraph>{box.body}</Paragraph>
                 </Content>
                 
@@ -45,7 +47,7 @@ const Box = ({order,box}) => {
                                     <div style={{marginRight : '8px'}}>ASK US</div>
                         <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.3536 4.35355C13.5488 4.15829 13.5488 3.84171 13.3536 3.64645L10.1716 0.464467C9.97631 0.269205 9.65973 0.269205 9.46447 0.464467C9.2692 0.659729 9.2692 0.976312 9.46447 1.17157L12.2929 4L9.46447 6.82843C9.2692 7.02369 9.2692 7.34027 9.46447 7.53553C9.65973 7.7308 9.97631 7.7308 10.1716 7.53553L13.3536 4.35355ZM-4.37114e-08 4.5L13 4.5L13 3.5L4.37114e-08 3.5L-4.37114e-08 4.5Z" fill="white"/>
-</svg>
+                        </svg>
 
                             </InnerCircle>
                         
@@ -59,7 +61,8 @@ const Box = ({order,box}) => {
             {
                 odd  && (
                     <Content>
-                    <Header1 style={{fontSize : '32px' , marginBottom : '16px'}}>{box.title}</Header1>
+                        <Arrow direction='right'/>
+                    <Header1 style={{textTransform : 'uppercase', fontSize : '32px' , marginBottom : '16px'}}>{box.title}</Header1>
                     <Paragraph>{box.body}</Paragraph>
                 </Content>
                 
@@ -77,6 +80,7 @@ align-items :center;
 justify-content : space-between;
 `
 const Content = styled.article`
+position:  relative;
 display : flex;
 flex-direction : column;
 padding-bottom : 124px;
@@ -91,6 +95,7 @@ padding-bottom : 124px;
 `;
 const Circle = styled(motion.div)`
         overflow: hidden;
+        position: relative;
         display : flex;
         justify-content : center;
         align-items : center;
