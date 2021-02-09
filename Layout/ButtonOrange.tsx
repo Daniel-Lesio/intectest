@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
 import ArrowSvg from "./ArrowSvg";
-import Link from 'next/link'
+import jump from 'jump.js'
+// import Link from 'next/link'
 const ButtonWhite = (props) => {
     const [arrowColor,setArrowColor] = useState('#EB7700')
     const [hovered , changeHovered] = useState(false)
@@ -39,8 +40,11 @@ const ButtonWhite = (props) => {
         setArrowColor("#fff")
         
     }, [props]);    
+    const goto = () =>{
+        jump("#target")
+    }
     return (
-        <Link href={props.to}>
+        <div onClick={goto}>
         <a>
         <ButtonWhiteComp 
         color={props.color}
@@ -55,7 +59,7 @@ const ButtonWhite = (props) => {
             }            
         </ButtonWhiteComp>
         </a>
-        </Link>
+        </div>
     );
 }
 
