@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components'
+import { useWindowWidth} from '@react-hook/window-size'
+
 import Link from 'next/link'
 // import aboutImg  from '../../assets/fot_about_us_home.jpg'
-import AspectRatio  from 'react-aspect-ratio'
-import 'react-aspect-ratio/aspect-ratio.css'
 import Image from 'next/image'
 const AboutComp = () => {
-    return (
+const onlyWidth  = useWindowWidth()
+  return (
         <section id="about">
           <Image
           style={{
@@ -20,13 +21,13 @@ const AboutComp = () => {
       </svg>
         
       <div className="container about">
-        <div className="about-left">
+          <div className="about-left">
 
           <Image src='/assets/fot_about_us_home.jpg'  width={758} height={640} alt=""/>
         </div>
-        <div className="about-right" style={{alignSelf : 'center',zIndex:1}}>
-          <h1 style={{}}>ABOUT US</h1>
-          <p style={{fontSize : 16 , width : '100%', maxWidth: '336px'}} >Since 2016, Intec Energy Solutions has been a leading provider of services related to the construction of farms from renewable energy sources. We design high-quality solar farms for international investors. Our employees have many years of experience in German companies that are pioneers in the photovoltaic market in Europe. That is why we follow the engineering principles developed by the largest companies in the industry in all our projects. As a result, our farms are modern and environmentally friendly with an energy-saving approach.</p>
+        <div className="about-right" style={{alignSelf : 'center',zIndex:2}}>
+          <h1>ABOUT US</h1>
+          <p style={{fontSize : 16 , width : '100%'}} >Since 2016, Intec Energy Solutions has been a leading provider of services related to the construction of farms from renewable energy sources. We design high-quality solar farms for international investors. Our employees have many years of experience in German companies that are pioneers in the photovoltaic market in Europe. That is why we follow the engineering principles developed by the largest companies in the industry in all our projects. As a result, our farms are modern and environmentally friendly with an energy-saving approach.</p>
           <Link className="btn-about" href='/About'>
            <a className='btn-about'>
            <p>MORE</p> 

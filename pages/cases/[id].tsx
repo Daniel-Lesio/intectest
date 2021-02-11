@@ -3,9 +3,9 @@ import Layout from '../../Layout/Layout';
 import {useRouter} from 'next/router'
 import styled from 'styled-components';
 import Image from 'next/image'
-const article = ({news}) => {
+const Case = ({news}) => {
     const router = useRouter()
-console.log('news : ',news.content)
+console.log('news : ',news._embedded["wp:featuredmedia"][0].source_url)
     return (
         <Layout>
             <PageHeader>
@@ -19,14 +19,13 @@ console.log('news : ',news.content)
             style={{minHeight : '100vh',paddingTop : 80}}>
                  
                 <div style={{height : 48}}></div>
-    <h1 style={{textAlign : 'left'}} dangerouslySetInnerHTML={{ __html: news.title.rendered }}></h1>           
-    <Guttenberg style={{ marginTop : 32 ,marginBottom : 32   }} dangerouslySetInnerHTML={{ __html: news.content.rendered }}></Guttenberg>           
+    <div dangerouslySetInnerHTML={{ __html: news.excerpt.rendered }}></div>           
             </div>
         </Layout>
     );
 }
 
-export default article;
+export default Case;
 
 const PageHeader = styled.div`
     min-height: 640px;
@@ -80,25 +79,13 @@ export async function getStaticPaths() {
         fallback : false
     }
   }
-  export async function getStaticProps({params}) {
 
+  export async function getStaticProps({params}) {
     const res = await fetch(`http://139.59.159.33/wp-json/wp/v2/news/${params.id}?_embed`)
     const news = await res.json()
-
     return {
         props: {
             news
         }
     }
 }
-
-
-const Guttenberg = styled.div`
-   p{
-     margin-top: 32px;
-     margin-bottom: 32px;
- }
- img{
-     width: 100%;
- }
-`;

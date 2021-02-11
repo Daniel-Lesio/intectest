@@ -10,6 +10,7 @@ const Home = ({news}) => {
   
   // const [news] = useState(newsData) 
   useEffect(() => {
+    console.log('news2 : ',typeof(news))
     window.scrollTo(0, 0);
 },[] );
 return (
@@ -22,13 +23,14 @@ return (
             />
           </PageHeader>
           <NewsList className='container'>
-          {
+           {
             news.map((n,index)=>{
               return (
+                // <h1 key={index}>e</h1>
                 <NewsArticle article={n} key={index} />
               )
             })
-          }
+          } 
           </NewsList>
 <ButtonPlace>
 <Button>
@@ -98,12 +100,11 @@ const PageHeader = styled.div`
 
 
 
+
 export const getStaticProps = async () => {
-  const fs = require('fs')
-  const path = require('path')
-  const data = await fs.readFileSync( path.join(process.cwd(),'/data/posts.json'),'utf-8')
-  let news = await JSON.parse(data)
-  
+  const res = await fetch('http://139.59.159.33/wp-json/wp/v2/news?_embed')
+  const news = await res.json()
+
   return {
     props: {
       news,

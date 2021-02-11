@@ -109,10 +109,14 @@ position: relative;
 display:  flex;
 justify-content: center;
 align-items: center;
-    img{
+z-index: -1;
+img{
+    position: absolute;
+        z-index: -1;
         width:  100%;
         height:  100%;
         object-fit: cover;
+        display : none;
     }
 `;
 
@@ -137,9 +141,9 @@ const Buttons = styled.div`
   bottom: 0px;
 `;
 const CasesText = styled(motion.div)`
-    position: absolute;
-    transform: translateY(10px);
-    z-index: 4;
+   z-index: 20;
+   display : flex;
+   
     max-width: 300px;
     color : white;
     text-align :left;

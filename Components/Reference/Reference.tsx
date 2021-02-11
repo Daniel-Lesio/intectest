@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion'
 // import { Paragraph } from '../../styledComponents/styledComponents';
@@ -11,7 +11,10 @@ const Reference = (props) => {
     const[ images ,setImages] = useState([])
     console.log('props :' ,props)    
     const [posx, setposx] = useState(-480)
-    const [hovered,setHovered] = useState(false)    
+    const [hovered,setHovered] = useState(false)
+    const ref = useRef(null);
+
+    
     useEffect(() => {
         if(props.obj.id === 0){
             setWhite(true)
@@ -22,18 +25,18 @@ const Reference = (props) => {
         
     }, [props]);
     const slide =()=>{
+    console.log('Swiper : ',Swiper)
+    // swiper.slideNext();
         
-        setposx(posx=>posx-480)
-        console.log('posx : ',posx)
     }
     return (
         <ReferenceComp>
-            <Descriptions white={white}>
+            <Descriptions  white={white}>
                 <h3 style={{ fontSize: 14,lineHeight : 24, fontWeight : 900}}>Project name: <span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.name}</span></h3>
                 <h3 style={{ fontSize: 14,lineHeight : 24, fontWeight : 900}}>Place of project: <span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.place}</span></h3>
                 <h3 style={{ fontSize: 14,lineHeight : 24, fontWeight : 900}}>CAPACITY :<span style={{fontWeight:400, textTransform  : 'capitalize' ,paddingLeft : '10px' }}>{props.obj.capacity}</span></h3>
                 <h3 style={{ fontSize: 14,lineHeight : 24, fontWeight : 900}}>DATE OF COMPLETION: <span  style={{fontWeight:400 , textTransform  : 'capitalize',paddingLeft : '10px'}}>{props.obj.completion}</span></h3>
-                <Arrow onClick={()=>slide()} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} >
+                <Arrow onClick={slide} className='next' onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} >
                         {!hovered && (
                                     <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fillRule="evenodd" clipRule="evenodd" d="M0.292898 8.70737C-0.0976295 8.31684 -0.0976353 7.68368 0.292885 7.29315L6.65678 0.92913C7.04731 0.538602 7.68047 0.538596 8.071 0.929117C8.46153 1.31964 8.46153 1.9528 8.07101 2.34333L3.4142 7.00023L12.9907 7.00014C12.9938 7.00011 12.9969 7.00009 13 7.00009L17.4954 7.00009L18 7.00009L18 7.00009C18.5523 7.00009 19 7.44781 19 8.00009C19 8.55238 18.5523 9.00009 18 9.00009H17.5005L3.41422 9.00023L8.07112 13.657C8.46165 14.0476 8.46165 14.6807 8.07113 15.0713C7.68061 15.4618 7.04745 15.4618 6.65692 15.0713L0.292898 8.70737Z" fill="#EB7700"/>
@@ -53,15 +56,16 @@ const Reference = (props) => {
                         nextEl : '.next',
                         prevEl : '.prev'
                     }}
-            
-                    autoplay={true}
+
+                    autoplay={false}
                     spaceBetween={50}
                     slidesPerView={3}
                     style={{width : '100vw'}}
-            
+                    
             >
             {images && images.map((image,index)=>(
                         <SwiperSlide
+                        
                         key={index}
                         style={{
                             width: '448px',
@@ -78,22 +82,7 @@ const Reference = (props) => {
                 ))}
                 
             </Swiper>
-            {/* <Wrapper>
-            <ReferenceImages drag='x' animate={{ x: posx }}
-                transition={{ duration: 0.5 }}  dragConstraints={{ left: 0, right: 300 }}
->   
 
-               {images && images.map((image,index)=>(
-                        <ReferenceImage 
-                        key={index}>
-                            <img src={image} alt=""/>
-
-                        </ReferenceImage>
-                ))}
-  
-            </ReferenceImages>
-  
-            </Wrapper> */}
             <div style={{height : 24}}></div>
             <Paragraph style={{fontSize:'16px',fontWeight :400 , width:'100%',maxWidth : '832px'}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing metus, blandit laoreet eget. Ullamcorper donec mi quis interdum molestie amet id sit pharetra. Id leo ac tempor feugiat vitae arcu platea. Gravida sed sed arcu, at. Ac risus semper sodales condimentum. Nibh non tristique ut volutpat. Consectetur proin ipsum elementum consequat. Ultrices lorem sit nisl.

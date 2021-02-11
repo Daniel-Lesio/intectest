@@ -2,7 +2,8 @@ import {useState} from 'react'
 import Image from 'next/image'
 import SwiperCore, {Navigation,Pagination} from 'swiper'
 import { Swiper, SwiperSlide  } from 'swiper/react';
-SwiperCore.use([Navigation,Pagination])
+import { useWindowWidth} from '@react-hook/window-size'
+SwiperCore.use([Navigation,Pagination,])
 import styled from 'styled-components';
 import {motion} from 'framer-motion'
 import Button from '../../Layout/Button'
@@ -23,9 +24,22 @@ export interface SwipeNewsProps {
 const SwipeNews: React.FunctionComponent<SwipeNewsProps> = ({data}) => {
     const [hoverNext,sethoverNext] = useState(false)
     const [hoverPrev,sethoverPrev] = useState(false)
-    
+    const onlyWidth = useWindowWidth()
+    console.log('onlyWidth : ',onlyWidth)
     const slide = (direction) =>{
         console.log('direction : ',direction)
+    }
+    const slidesInView = ()=> {
+        if(onlyWidth > 1300){
+            return 3
+        }
+        else if(onlyWidth < 1300 && onlyWidth > 870){
+            return 2
+        }
+        else{
+            return 1
+        }
+
     }
     return ( 
         <div className="container" style={{}}>
@@ -75,24 +89,26 @@ const SwipeNews: React.FunctionComponent<SwipeNewsProps> = ({data}) => {
 
         autoplay={true}
         spaceBetween={50}
-        slidesPerView={3}
+        slidesPerView={  slidesInView() }
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log('swiper :' ,swiper)}
-        style={{width : '100vw'}}
+        style={{minWidth : '100vw'}}
+        
     >
             {data && data.map(d=>(
                 <SwiperSlide key={d.id}>
-                    <NewsCard key={d.id} className='news-hover'>
+                    <NewsCard key={d.id} className='news-hover' style={{marginLeft : 'auto', marginRight : 'auto'}}>
                         <Img
                          whileHover={{
                             scale: 1.2,
                             transition: { duration: 1 },
                           }}
                         >
-                            <Image src={d.url} layout='fill'/> 
+                            {/* <Image src={d._embedded["wp:featuredmedia"][0].source_url} layout='fill'/>  */}
+                            <Image src='https://picsum.photos/200/300' layout='fill'/> 
                         </Img>
                         <NewsTitle>
-                            {d.title}
+                            title
                         </NewsTitle>
                         <NewsContent>
                             Floating solar power plants are more advantageous than ground-mounted projects, here are some of them.
