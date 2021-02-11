@@ -16,9 +16,9 @@ const Layout: React.FunctionComponent<LayoutProps> = ({children}) => {
             <SocialsComp/>
             <ContactComp/>
             <FooterComp/>
-        </>
             
         </div>
+        </>
      );
 }
  
