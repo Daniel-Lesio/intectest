@@ -1,6 +1,8 @@
 
 module.exports ={
-    pwa: {
+  poweredByHeader: false,
+  
+  pwa: {
         dest: 'public'
       },
     images: {
