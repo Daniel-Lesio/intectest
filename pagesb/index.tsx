@@ -24,39 +24,13 @@ export default function Home({HeroData,posts,testimonials}) {
       { (onlyWidth > 1024) &&
         <Numbers/>
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-      
+      <SwipeNews data={posts}/>
+      <AboutComp/> 
+       {/* <CasesComp/> */}
+      <SwipeCases/>
+      <ServicesComp/>
+      <TestimonialsComp data={testimonials}/>
+      <Certificates/>
     </Layout>
   )
 }

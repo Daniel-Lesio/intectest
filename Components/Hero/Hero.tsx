@@ -1,5 +1,5 @@
 
-import Image from 'next/image'
+// import Image from 'next/image'
 import styled from 'styled-components';
 import {motion} from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
@@ -9,10 +9,12 @@ const {ref,inView} = useInView({
 })
   return (
         <HeroComp>
-          <Image
+          <img src='/assets/_banner@2x.jpg'/>
+          {/* <Image
           src={'/assets/_banner@2x.jpg'}
           layout='fill'
-          />
+          /> */}
+          <img src={require('/assets/_banner@2x.jpg')} alt=""/>
         <div ref={ref} className="container">
           {inView &&(
             <HeroText
@@ -100,3 +102,8 @@ const childrenVariables = {
     }    
   }
 }
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%; 
+`;
